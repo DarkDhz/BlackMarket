@@ -16,6 +16,10 @@ public class Main extends JavaPlugin {
         this.initEvents();
     }
 
+    @Override
+    public void onDisable() {
+    }
+
     private void initEvents() {
         PluginManager pm = Bukkit.getPluginManager();
         pm.registerEvents(new InventoryEvents(), this);
