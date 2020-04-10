@@ -1,0 +1,7 @@
+name: BM
+main: dev.darkhorizon.es.black.Main
+version: "1.0"
+commands:
+  blackmarket:
+    usage: /<command>
+    aliases: [bmarket, blackm, traficante]
