@@ -1,5 +1,6 @@
 package dev.darkhorizon.es.black.gui;
 
+import dev.darkhorizon.es.black.items.CommonItems;
 import dev.darkhorizon.es.black.items.MainItems;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -8,6 +9,7 @@ import org.bukkit.inventory.Inventory;
 public class MainGUI implements GUI{
 
     private MainItems items = MainItems.getInstance();
+    private CommonItems citems = CommonItems.getInstance();
 
     public static String title = "§c§l»§r §0Mercado Espacial";
 
@@ -18,7 +20,7 @@ public class MainGUI implements GUI{
         inv.setItem(16, items.getItemList());
         for (int i = 0; i < 27; i++) {
             if (inv.getItem(i) == null) {
-                inv.setItem(i, items.getSeparator());
+                inv.setItem(i, citems.getSeparator());
             }
         }
         p.openInventory(inv);

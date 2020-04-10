@@ -9,23 +9,24 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ItemListItems {
-    private static ItemListItems INSTANCE = null;
+public class GiveItems {
 
-    private ItemListItems() {
+    private static GiveItems INSTANCE = null;
+
+    private GiveItems() {
         //TODO Singleton for only 1 object instance
     }
 
-    public static ItemListItems getInstance() {
+    public static GiveItems getInstance() {
         if (INSTANCE == null) createInstance();
         return INSTANCE;
     }
 
     private static void createInstance() {
         if (INSTANCE == null) {
-            synchronized(ItemListItems.class) {
+            synchronized(GiveItems.class) {
                 if (INSTANCE == null) {
-                    INSTANCE = new ItemListItems();
+                    INSTANCE = new GiveItems();
                 }
             }
         }
@@ -33,17 +34,13 @@ public class ItemListItems {
 
     public ItemStack getLanzaMeteoros() {
         ItemStack item = new ItemStack(Material.BOW);
-        //item.addUnsafeEnchantment(Enchantment.ARROW_DAMAGE, 12);
-        //item.addUnsafeEnchantment(Enchantment.DURABILITY, 8);
-        //item.addUnsafeEnchantment(Enchantment.ARROW_FIRE, 6);
-        //item.addUnsafeEnchantment(Enchantment.ARROW_INFINITE, 1);
+        item.addUnsafeEnchantment(Enchantment.ARROW_DAMAGE, 12);
+        item.addUnsafeEnchantment(Enchantment.DURABILITY, 8);
+        item.addUnsafeEnchantment(Enchantment.ARROW_FIRE, 6);
+        item.addUnsafeEnchantment(Enchantment.ARROW_INFINITE, 1);
         ItemMeta meta = item.getItemMeta();
         meta.setDisplayName("§0§l✦ §cLanza Meteoros §0§l✦");
         List<String> lore = new ArrayList<String>();
-        lore.add("§7Poder XII");
-        lore.add("§7Irrompible VIII");
-        lore.add("§7Llamas VI");
-        lore.add("§7Infinidad I");
         lore.add("§2");
         lore.add("§fEncantamientos Especiales:");
         lore.add("§cMultitiro II");
@@ -54,11 +51,6 @@ public class ItemListItems {
         lore.add("§4");
         lore.add("§a¡Clic para ver el crafteo!");
         meta.setLore(lore);
-        meta.addEnchant(Enchantment.ARROW_DAMAGE, 12, true);
-        meta.addEnchant(Enchantment.DURABILITY, 8, true);
-        meta.addEnchant(Enchantment.ARROW_FIRE, 6, true);
-        meta.addEnchant(Enchantment.ARROW_INFINITE, 1, true);
-        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         item.setItemMeta(meta);
 
         return item;

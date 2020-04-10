@@ -15,6 +15,8 @@ public class ItemListGUI implements GUI{
     public void generateInventory(Player p) {
         Inventory inv = Bukkit.createInventory(p, 3*9, title);
 
+        inv.setItem(10, items.getLanzaMeteoros());
+
         p.openInventory(inv);
     }
 }

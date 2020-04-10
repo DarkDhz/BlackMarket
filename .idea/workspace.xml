@@ -6,7 +6,31 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15c0c107-90d0-411c-a746-4657cf96a8ea" name="Default Changelist" comment="" />
+    <list default="true" id="15c0c107-90d0-411c-a746-4657cf96a8ea" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/Data/Database.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/Data/SQLite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/gui/PerCraft/LanzaMeteoros.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/items/CommonItems.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/items/GiveItems.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/items/PerCraft/LMItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BM_jar/BM.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BM_jar/BM.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/Data/TempData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/Data/TempData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/commands/BlackMarket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/commands/BlackMarket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/events/InventoryEvents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/events/InventoryEvents.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/gui/ItemListGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/gui/ItemListGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/gui/MainGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/gui/MainGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/items/ItemListItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/items/ItemListItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/items/MainItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/items/MainItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/commands/BlackMarket.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/commands/BlackMarket.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/events/InventoryEvents.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/events/InventoryEvents.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/gui/ItemListGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/gui/ItemListGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/gui/MainGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/gui/MainGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/items/ItemListItems.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/items/ItemListItems.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/items/MainItems.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/items/MainItems.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,13 +39,20 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="D:\Users\Arnau\Desktop\uni\IdeaProjects\BM\.idea" />
+      </set>
+    </option>
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -31,6 +62,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1aLjVTZ2ntnUrhsD4CFnBd7uJSI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -38,6 +70,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -54,25 +87,53 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1586521791798</updated>
-      <workItem from="1586521794534" duration="2808000" />
+      <workItem from="1586521794534" duration="14268000" />
     </task>
+    <task id="LOCAL-00001" summary="Init">
+      <created>1586524733501</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1586524733501</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Init" />
+    <option name="LAST_COMMIT_MESSAGE" value="Init" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="659" y="170" key="#com.intellij.ide.util.MemberChooser" timestamp="1586524398420">
+    <state x="446" y="119" key="#SQL_Dialects" timestamp="1586536022739">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state x="659" y="170" key="#com.intellij.ide.util.MemberChooser/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586524398420" />
+    <state x="446" y="119" key="#SQL_Dialects/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586536022738" />
+    <state x="446" y="119" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586536145613">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state x="446" y="119" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586536145613" />
+    <state x="659" y="170" key="#com.intellij.ide.util.MemberChooser" timestamp="1586527025509">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state x="659" y="170" key="#com.intellij.ide.util.MemberChooser/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586527025509" />
     <state x="437" y="386" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1586523157568">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state x="437" y="386" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586523157568" />
+    <state x="478" y="57" key="CommitChangelistDialog2" timestamp="1586524729901">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state x="478" y="57" key="CommitChangelistDialog2/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586524729901" />
     <state x="334" y="35" key="SettingsEditor" timestamp="1586521903604">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state x="334" y="35" key="SettingsEditor/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586521903604" />
+    <state x="446" y="194" key="Vcs.Push.Dialog.v2" timestamp="1586524741848">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state x="446" y="194" key="Vcs.Push.Dialog.v2/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586524741848" />
   </component>
 </project>
