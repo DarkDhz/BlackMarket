@@ -5,3 +5,6 @@ commands:
   blackmarket:
     usage: /<command>
     aliases: [bmarket, blackm, traficante]
+  virtualboss:
+    usage: /<command>
+    aliases: [vboss, virtualb, vb, boss]
