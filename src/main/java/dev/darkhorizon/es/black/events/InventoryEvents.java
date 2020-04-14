@@ -8,9 +8,6 @@ import dev.darkhorizon.es.black.items.CommonItems;
 import dev.darkhorizon.es.black.items.GiveItems;
 import dev.darkhorizon.es.black.items.ItemListItems;
 import dev.darkhorizon.es.black.items.MainItems;
-import dev.darkhorizon.es.black.items.PerCraft.LMItems;
-import org.bukkit.Effect;
-import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -22,11 +19,10 @@ import org.bukkit.inventory.ItemStack;
 
 public class InventoryEvents implements Listener {
 
-    private MainItems mitems = MainItems.getInstance();
-    private ItemListItems litems = ItemListItems.getInstance();
-    private CommonItems citems = CommonItems.getInstance();
-    private GiveItems give_items = GiveItems.getInstance();
-    //private LMItems lm_items = LMItems.getInstance();
+    private final MainItems main_items = MainItems.getInstance();
+    private final ItemListItems list_items = ItemListItems.getInstance();
+    private final CommonItems common_items = CommonItems.getInstance();
+    private final GiveItems give_items = GiveItems.getInstance();
 
     @EventHandler
     public void onClose(InventoryCloseEvent event) {
@@ -51,14 +47,14 @@ public class InventoryEvents implements Listener {
         }
         if (inv.getTitle().contains(MainGUI.title)) {
             event.setCancelled(true);
-            if (validateItem(item, mitems.getItemList())) {
+            if (validateItem(item, main_items.getItemList())) {
                 GUI gui = new ItemListGUI();
                 gui.generateInventory(player);
             }
         }
         if (inv.getTitle().contains(ItemListGUI.title)) {
             event.setCancelled(true);
-            if (validateItem(item, litems.getLanzaMeteoros())) {
+            if (validateItem(item, list_items.getLanzaMeteoros())) {
                 GUI gui = new LanzaMeteoros();
                 gui.generateInventory(player);
             }
@@ -67,7 +63,7 @@ public class InventoryEvents implements Listener {
             if (event.getSlot() > 54 || (event.getSlot() > 19 && event.getSlot() < 26)) {
                 return;
             }
-            if (validateItem(item, citems.getCraft())) {
+            if (validateItem(item, common_items.getCraft())) {
                 player.getInventory().addItem(give_items.getLanzaMeteoros());
                 player.closeInventory();
                 player.playSound(player.getLocation(), Sound.ANVIL_BREAK, 10F, 3F);

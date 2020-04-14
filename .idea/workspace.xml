@@ -7,12 +7,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15c0c107-90d0-411c-a746-4657cf96a8ea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/BM.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualBosses.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/BM_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/BM_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/bosses/Anubis.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/bosses/Invocador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/bosses/ZombieKing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BM_jar/BM.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BM_jar/BM.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/Data/DPList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/Data/DPList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/Data/DamagePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/Data/DamagePlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/bosses/CustomBoss.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/bosses/CustomBoss.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/bosses/CustomCreeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/bosses/CustomCreeper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/commands/BlackMarket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/commands/BlackMarket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/commands/VirtualBoss.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/commands/VirtualBoss.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/events/EntityEvents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/events/EntityEvents.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/events/InventoryEvents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/events/InventoryEvents.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/events/boss/BossDeath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/events/boss/BossDeath.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/gui/ItemListGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/gui/ItemListGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/gui/MainGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/gui/MainGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/items/CommonItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/items/CommonItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/items/GiveItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/items/GiveItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/items/ItemListItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/items/ItemListItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/Data/TempData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/Data/TempData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/commands/BlackMarket.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/commands/BlackMarket.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/events/InventoryEvents.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/events/InventoryEvents.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/gui/ItemListGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/gui/ItemListGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/gui/MainGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/gui/MainGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/items/ItemListItems.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/items/ItemListItems.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,14 +80,17 @@
     <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="bm" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -91,7 +116,10 @@
       <workItem from="1586862117569" duration="6067000" />
       <workItem from="1586870032510" duration="8067000" />
       <workItem from="1586878238455" duration="159000" />
-      <workItem from="1586878511912" duration="28000" />
+      <workItem from="1586878511912" duration="184000" />
+      <workItem from="1586880313416" duration="3641000" />
+      <workItem from="1586888543721" duration="1825000" />
+      <workItem from="1586893566041" duration="5011000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1586524733501</created>
@@ -128,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586878316632</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added Damage count">
+      <created>1586878559552</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1586878559552</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +177,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Added Damage count" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="334" y="35" key="#Project_Structure" timestamp="1586880508192">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state x="334" y="35" key="#Project_Structure/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586880508192" />
     <state x="446" y="119" key="#SQL_Dialects" timestamp="1586536022739">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
@@ -150,10 +189,10 @@
       <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state x="446" y="119" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586536145613" />
-    <state x="659" y="170" key="#com.intellij.ide.util.MemberChooser" timestamp="1586862237258">
+    <state x="659" y="170" key="#com.intellij.ide.util.MemberChooser" timestamp="1586881308854">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state x="659" y="170" key="#com.intellij.ide.util.MemberChooser/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586862237258" />
+    <state x="659" y="170" key="#com.intellij.ide.util.MemberChooser/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586881308854" />
     <state x="534" y="197" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1586878087140">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
@@ -170,22 +209,26 @@
       <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state x="584" y="208" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586864239608" />
-    <state x="478" y="57" key="CommitChangelistDialog2" timestamp="1586878314387">
+    <state x="478" y="57" key="CommitChangelistDialog2" timestamp="1586878558595">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state x="478" y="57" key="CommitChangelistDialog2/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586878314387" />
-    <state x="334" y="35" key="SettingsEditor" timestamp="1586521903604">
+    <state x="478" y="57" key="CommitChangelistDialog2/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586878558595" />
+    <state x="334" y="35" key="SettingsEditor" timestamp="1586881959505">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state x="334" y="35" key="SettingsEditor/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586521903604" />
-    <state x="446" y="194" key="Vcs.Push.Dialog.v2" timestamp="1586878321690">
+    <state x="334" y="35" key="SettingsEditor/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586881959505" />
+    <state x="446" y="194" key="Vcs.Push.Dialog.v2" timestamp="1586878563140">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state x="446" y="194" key="Vcs.Push.Dialog.v2/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586878321690" />
+    <state x="446" y="194" key="Vcs.Push.Dialog.v2/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586878563140" />
     <state x="550" y="285" key="com.intellij.ide.util.TipDialog" timestamp="1586870043456">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state x="550" y="285" key="com.intellij.ide.util.TipDialog/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586870043456" />
+    <state x="584" y="222" key="extract.method.dialog" timestamp="1586880719064">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state x="584" y="222" key="extract.method.dialog/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586880719064" />
     <state x="596" y="80" key="refactoring.ChangeSignatureDialog" timestamp="1586863880732">
       <screen x="0" y="0" width="1707" height="920" />
     </state>

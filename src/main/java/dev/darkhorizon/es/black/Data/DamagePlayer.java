@@ -1,9 +1,12 @@
 package dev.darkhorizon.es.black.Data;
 
-public class DamagePlayer {
+import jdk.nashorn.internal.objects.annotations.Getter;
+import org.jetbrains.annotations.NotNull;
 
-    String uuid;
-    double damage;
+public class DamagePlayer implements Comparable{
+
+    private String uuid;
+    private double damage;
 
     public DamagePlayer(String id, double damage) {
         this.uuid = id;
@@ -20,5 +23,19 @@ public class DamagePlayer {
 
     public String getUuid() {
         return uuid;
+    }
+
+
+    public int compareTo(DamagePlayer comp) {
+        double compareDamage = comp.getDamage();
+        return (int) (this.damage-compareDamage);
+    }
+
+    public int compareTo(@NotNull Object comp) {
+        if (comp instanceof DamagePlayer) {
+            double compareDamage = ((DamagePlayer) comp).getDamage();
+            return (int) (compareDamage-this.damage);
+        }
+        return 0;
     }
 }

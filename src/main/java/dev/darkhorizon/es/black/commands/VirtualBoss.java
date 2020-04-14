@@ -4,6 +4,7 @@ import dev.darkhorizon.es.black.Data.TempData;
 import dev.darkhorizon.es.black.Main;
 import dev.darkhorizon.es.black.bosses.CustomBoss;
 import dev.darkhorizon.es.black.bosses.CustomCreeper;
+import dev.darkhorizon.es.black.bosses.ZombieKing;
 import dev.darkhorizon.es.black.utils.ActionBar;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -34,13 +35,15 @@ public class VirtualBoss implements CommandExecutor {
                 launcher.sendMessage("/virtualboss killall");
             }
         } else if (args.length == 1) {
-            if (args[0].equals("time")) {
+            if (args[0].equalsIgnoreCase("time")) {
                 launcher.sendMessage("UNIMPLEMENTED");
+                return;
             }
-            if (args[0].equals("list")) {
+            if (args[0].equalsIgnoreCase("list")) {
                 launcher.sendMessage("UNIMPLEMENTED");
+                return;
             }
-            if (args[0].equals("killall")  && launcher.hasPermission("virtual.boss.kill")) {
+            if (args[0].equalsIgnoreCase("killall")  && launcher.hasPermission("virtual.boss.kill")) {
                 for (Entity entity : TempData.entities) {
                     if (entity instanceof LivingEntity) {
                         ((LivingEntity) entity).damage(100000);
@@ -48,13 +51,20 @@ public class VirtualBoss implements CommandExecutor {
                     }
                     TempData.entities.clear();
                 }
+                return;
             }
 
         } else {
             if (args[0].equals("spawn")) {
-                if (args[1].equals("creeper") && launcher.hasPermission("virtual.boss.spawn")) {
+                if (args[1].equalsIgnoreCase("creeper") && launcher.hasPermission("virtual.boss.spawn")) {
                     CustomBoss boss = new CustomCreeper(launcher.getLocation());
                     launcher.sendMessage("Has creado un Boss Creeper en tu localizacion.");
+                    return;
+                }
+                if (args[1].equalsIgnoreCase("reyzombie") && launcher.hasPermission("virtual.boss.spawn")) {
+                    CustomBoss boss = new ZombieKing(launcher.getLocation());
+                    launcher.sendMessage("Has creado un Boss Creeper en tu localizacion.");
+                    return;
                 }
             }
         }

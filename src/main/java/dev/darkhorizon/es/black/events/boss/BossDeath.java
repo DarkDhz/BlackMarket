@@ -1,17 +1,18 @@
 package dev.darkhorizon.es.black.events.boss;
 
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.LivingEntity;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
 public class BossDeath extends Event {
 
-    private final Entity entity;
+    private final LivingEntity entity;
 
 
     private static final HandlerList HANDLERS = new HandlerList();
 
-    public BossDeath(Entity e) {
+    public BossDeath(LivingEntity e) {
         this.entity = e;
     }
 
@@ -23,7 +24,7 @@ public class BossDeath extends Event {
         return HANDLERS;
     }
 
-    public Entity getEntity() {
+    public LivingEntity getEntity() {
         return this.entity;
     }
 }

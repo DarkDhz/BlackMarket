@@ -33,10 +33,6 @@ public class ItemListItems {
 
     public ItemStack getLanzaMeteoros() {
         ItemStack item = new ItemStack(Material.BOW);
-        //item.addUnsafeEnchantment(Enchantment.ARROW_DAMAGE, 12);
-        //item.addUnsafeEnchantment(Enchantment.DURABILITY, 8);
-        //item.addUnsafeEnchantment(Enchantment.ARROW_FIRE, 6);
-        //item.addUnsafeEnchantment(Enchantment.ARROW_INFINITE, 1);
         ItemMeta meta = item.getItemMeta();
         meta.setDisplayName("§0§l✦ §cLanza Meteoros §0§l✦");
         List<String> lore = new ArrayList<String>();
