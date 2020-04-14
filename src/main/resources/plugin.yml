@@ -1,4 +1,4 @@
-name: BM
+name: VirtualBosses
 main: dev.darkhorizon.es.black.Main
 version: "1.0"
 commands:

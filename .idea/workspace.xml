@@ -7,19 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15c0c107-90d0-411c-a746-4657cf96a8ea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/Data/DPList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/Data/DamagePlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/BM.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualBosses.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/BM_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/BM_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BM_jar/BM.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BM_jar/BM.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/Data/TempData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/Data/TempData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/bosses/CustomCreeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/bosses/CustomCreeper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/commands/VirtualBoss.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/commands/VirtualBoss.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/events/EntityEvents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/events/EntityEvents.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/utils/ActionBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/utils/ActionBar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/BM.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/Data/TempData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/Data/TempData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,27 +44,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IgnoredFileRootStore">
-    <option name="generatedRoots">
-      <set>
-        <option value="D:\Users\Arnau\Desktop\uni\IdeaProjects\BM\.idea" />
-      </set>
-    </option>
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
   <component name="ProjectId" id="1aLjVTZ2ntnUrhsD4CFnBd7uJSI" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -84,6 +62,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -111,6 +90,8 @@
       <workItem from="1586859794930" duration="1748000" />
       <workItem from="1586862117569" duration="6067000" />
       <workItem from="1586870032510" duration="8067000" />
+      <workItem from="1586878238455" duration="159000" />
+      <workItem from="1586878511912" duration="28000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1586524733501</created>
@@ -140,17 +121,25 @@
       <option name="project" value="LOCAL" />
       <updated>1586864057292</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added Damage count">
+      <created>1586878316632</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1586878316632</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Init" />
     <MESSAGE value="Added Bosses" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Bosses" />
+    <MESSAGE value="Added Damage count" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Damage count" />
   </component>
   <component name="WindowStateProjectService">
     <state x="446" y="119" key="#SQL_Dialects" timestamp="1586536022739">
@@ -181,18 +170,18 @@
       <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state x="584" y="208" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586864239608" />
-    <state x="478" y="57" key="CommitChangelistDialog2" timestamp="1586864047057">
+    <state x="478" y="57" key="CommitChangelistDialog2" timestamp="1586878314387">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state x="478" y="57" key="CommitChangelistDialog2/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586864047057" />
+    <state x="478" y="57" key="CommitChangelistDialog2/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586878314387" />
     <state x="334" y="35" key="SettingsEditor" timestamp="1586521903604">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state x="334" y="35" key="SettingsEditor/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586521903604" />
-    <state x="446" y="194" key="Vcs.Push.Dialog.v2" timestamp="1586553353294">
+    <state x="446" y="194" key="Vcs.Push.Dialog.v2" timestamp="1586878321690">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state x="446" y="194" key="Vcs.Push.Dialog.v2/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586553353294" />
+    <state x="446" y="194" key="Vcs.Push.Dialog.v2/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586878321690" />
     <state x="550" y="285" key="com.intellij.ide.util.TipDialog" timestamp="1586870043456">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
