@@ -7,26 +7,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15c0c107-90d0-411c-a746-4657cf96a8ea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/dev.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/bosses/CustomBoss.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/bosses/CustomCreeper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/commands/VirtualBoss.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/events/EntityEvents.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/events/boss/BossDeath.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/events/boss/BossSpawn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/utils/ActionBar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/Data/DPList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/Data/DamagePlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/BM_jar/BM.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BM_jar/BM.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/Data/TempData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/Data/TempData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/commands/BlackMarket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/commands/BlackMarket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/bosses/CustomCreeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/bosses/CustomCreeper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/commands/VirtualBoss.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/commands/VirtualBoss.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/events/EntityEvents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/events/EntityEvents.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/utils/ActionBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/black/utils/ActionBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/BM.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/Data/TempData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/Data/TempData.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/commands/BlackMarket.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/commands/BlackMarket.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +76,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
+    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="bm" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -112,7 +109,8 @@
       <workItem from="1586803561366" duration="893000" />
       <workItem from="1586805666788" duration="3558000" />
       <workItem from="1586859794930" duration="1748000" />
-      <workItem from="1586862117569" duration="1832000" />
+      <workItem from="1586862117569" duration="6067000" />
+      <workItem from="1586870032510" duration="8067000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1586524733501</created>
@@ -135,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586553348407</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added Bosses">
+      <created>1586864057292</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1586864057292</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,7 +149,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Init" />
-    <option name="LAST_COMMIT_MESSAGE" value="Init" />
+    <MESSAGE value="Added Bosses" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Bosses" />
   </component>
   <component name="WindowStateProjectService">
     <state x="446" y="119" key="#SQL_Dialects" timestamp="1586536022739">
@@ -159,6 +165,10 @@
       <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state x="659" y="170" key="#com.intellij.ide.util.MemberChooser/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586862237258" />
+    <state x="534" y="197" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1586878087140">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state x="534" y="197" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586878087140" />
     <state x="437" y="386" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1586523157568">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
@@ -167,14 +177,14 @@
       <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state x="576" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586797451423" />
-    <state x="584" y="208" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586795352085">
+    <state x="584" y="208" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586864239608">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state x="584" y="208" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586795352085" />
-    <state x="478" y="57" key="CommitChangelistDialog2" timestamp="1586553346176">
+    <state x="584" y="208" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586864239608" />
+    <state x="478" y="57" key="CommitChangelistDialog2" timestamp="1586864047057">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state x="478" y="57" key="CommitChangelistDialog2/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586553346176" />
+    <state x="478" y="57" key="CommitChangelistDialog2/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586864047057" />
     <state x="334" y="35" key="SettingsEditor" timestamp="1586521903604">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
@@ -183,10 +193,10 @@
       <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state x="446" y="194" key="Vcs.Push.Dialog.v2/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586553353294" />
-    <state x="550" y="285" key="com.intellij.ide.util.TipDialog" timestamp="1586859796092">
+    <state x="550" y="285" key="com.intellij.ide.util.TipDialog" timestamp="1586870043456">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state x="550" y="285" key="com.intellij.ide.util.TipDialog/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586859796092" />
+    <state x="550" y="285" key="com.intellij.ide.util.TipDialog/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586870043456" />
     <state x="596" y="80" key="refactoring.ChangeSignatureDialog" timestamp="1586863880732">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
