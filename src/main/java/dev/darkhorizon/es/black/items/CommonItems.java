@@ -32,8 +32,8 @@ public class CommonItems {
         }
     }
 
-    public ItemStack getSeparator() {
-        ItemStack item = new ItemStack(Material.STAINED_GLASS_PANE, 1 , (short) 15);
+    public ItemStack getSeparator(int type) {
+        ItemStack item = new ItemStack(Material.STAINED_GLASS_PANE, 1 , (short) type);
         ItemMeta meta = item.getItemMeta();
         meta.setDisplayName("§1");
         item.setItemMeta(meta);

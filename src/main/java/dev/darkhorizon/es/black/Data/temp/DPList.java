@@ -1,4 +1,6 @@
-package dev.darkhorizon.es.black.Data;
+package dev.darkhorizon.es.black.Data.temp;
+
+import dev.darkhorizon.es.black.Data.temp.DamagePlayer;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -37,10 +39,14 @@ public class DPList {
         return null;
     }
 
-    public List<DamagePlayer> getTop3() {
+    public List<DamagePlayer> getSorted() {
         Collections.sort(list);
         return list;
 
+    }
+
+    public List<DamagePlayer> getList() {
+        return list;
     }
     public double getDamage(String uuid) {
         return getByUUID(uuid).getDamage();

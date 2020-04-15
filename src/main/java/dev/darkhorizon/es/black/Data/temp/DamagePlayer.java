@@ -1,11 +1,10 @@
-package dev.darkhorizon.es.black.Data;
+package dev.darkhorizon.es.black.Data.temp;
 
-import jdk.nashorn.internal.objects.annotations.Getter;
 import org.jetbrains.annotations.NotNull;
 
 public class DamagePlayer implements Comparable{
 
-    private String uuid;
+    private final String uuid;
     private double damage;
 
     public DamagePlayer(String id, double damage) {

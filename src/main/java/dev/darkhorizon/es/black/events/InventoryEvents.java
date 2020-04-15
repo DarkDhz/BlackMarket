@@ -1,5 +1,6 @@
 package dev.darkhorizon.es.black.events;
 
+import dev.darkhorizon.es.black.gui.BossList;
 import dev.darkhorizon.es.black.gui.GUI;
 import dev.darkhorizon.es.black.gui.ItemListGUI;
 import dev.darkhorizon.es.black.gui.MainGUI;
@@ -51,6 +52,7 @@ public class InventoryEvents implements Listener {
                 GUI gui = new ItemListGUI();
                 gui.generateInventory(player);
             }
+            return;
         }
         if (inv.getTitle().contains(ItemListGUI.title)) {
             event.setCancelled(true);
@@ -58,6 +60,7 @@ public class InventoryEvents implements Listener {
                 GUI gui = new LanzaMeteoros();
                 gui.generateInventory(player);
             }
+            return;
         }
         if (inv.getTitle().contains(LanzaMeteoros.title)) {
             if (event.getSlot() > 54 || (event.getSlot() > 19 && event.getSlot() < 26)) {
@@ -69,6 +72,11 @@ public class InventoryEvents implements Listener {
                 player.playSound(player.getLocation(), Sound.ANVIL_BREAK, 10F, 3F);
             }
             event.setCancelled(true);
+            return;
+        }
+        if (inv.getTitle().contains(BossList.title)) {
+            event.setCancelled(true);
+            return;
         }
     }
 

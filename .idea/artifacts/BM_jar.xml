@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="BM:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/BM_jar</output-path>
-    <root id="archive" name="BM.jar">
-      <element id="module-output" name="VirtualBosses" />
-    </root>
-  </artifact>
-</component>

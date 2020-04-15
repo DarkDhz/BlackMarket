@@ -1,6 +1,6 @@
 package dev.darkhorizon.es.black.bosses;
 
-import dev.darkhorizon.es.black.Data.TempData;
+import dev.darkhorizon.es.black.Data.temp.TempData;
 import dev.darkhorizon.es.black.Main;
 import dev.darkhorizon.es.black.events.boss.BossSpawn;
 import org.bukkit.Bukkit;
@@ -14,6 +14,7 @@ import org.bukkit.metadata.FixedMetadataValue;
 public class ZombieKing implements CustomBoss<ZombieKing> {
 
     private static final Main plugin = Main.getPlugin(Main.class);
+    private static final TempData temp_data = TempData.getInstance();
 
     public static String name = "§a§lRey Zombie";
 
@@ -44,7 +45,7 @@ public class ZombieKing implements CustomBoss<ZombieKing> {
         mount.getInventory().setSaddle(new ItemStack(Material.SADDLE, 1));
         mount.setPassenger(entity);
         mount.setMetadata("ZombieHorse", new FixedMetadataValue(plugin, "customhorse"));*/
-        TempData.entities.add(entity);
+        temp_data.getEntities().put(entity.getUniqueId(), entity);
         //TempData.entities.add(mount);
         Bukkit.getPluginManager().callEvent(new BossSpawn(entity));
 

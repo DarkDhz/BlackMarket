@@ -1,14 +1,12 @@
 package dev.darkhorizon.es.black.bosses;
 
-import dev.darkhorizon.es.black.Data.TempData;
+import dev.darkhorizon.es.black.Data.temp.TempData;
 import dev.darkhorizon.es.black.Main;
-import dev.darkhorizon.es.black.events.boss.BossDeath;
 import dev.darkhorizon.es.black.events.boss.BossSpawn;
+import dev.darkhorizon.es.black.items.ItemListItems;
 import org.bukkit.*;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.*;
-import org.bukkit.event.entity.EntityDamageByEntityEvent;
-import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.potion.PotionEffect;
@@ -19,6 +17,8 @@ import java.util.Random;
 public class CustomCreeper implements CustomBoss<CustomCreeper> {
 
     private static final Main plugin = Main.getPlugin(Main.class);
+    private static final TempData temp_data = TempData.getInstance();
+
 
     public static String name = "§a§lEl Explosiones";
 
@@ -38,7 +38,8 @@ public class CustomCreeper implements CustomBoss<CustomCreeper> {
         entity.setMaxHealth(300);
         entity.setHealth(300);
         // CALL EVENT
-        TempData.entities.add(entity);
+
+        temp_data.getEntities().put(entity.getUniqueId(), entity);
         Bukkit.getPluginManager().callEvent(new BossSpawn(entity));
     }
 
@@ -176,7 +177,7 @@ public class CustomCreeper implements CustomBoss<CustomCreeper> {
         minion.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 3), true);
         minion.getEquipment().setHelmet(new ItemStack(Material.TNT));
         minion.setMetadata("suicide_minion", new FixedMetadataValue(plugin, "suicide_minion"));
-        TempData.entities.add(minion);
+        temp_data.getEntities().put(minion.getUniqueId(), minion);
     }
 
     public static void attack(Entity entity) {

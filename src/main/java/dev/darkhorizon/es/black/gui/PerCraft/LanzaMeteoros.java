@@ -10,8 +10,8 @@ import org.bukkit.inventory.Inventory;
 
 public class LanzaMeteoros implements GUI {
 
-    private CommonItems citems = CommonItems.getInstance();
-    private LMItems lm_items = LMItems.getInstance();
+    private final CommonItems citems = CommonItems.getInstance();
+    private final LMItems lm_items = LMItems.getInstance();
 
     public static String title = "§0§l✦ §cLanza Meteoros §0§l✦";
 
@@ -27,12 +27,12 @@ public class LanzaMeteoros implements GUI {
         inv.setItem(7, citems.getLibroMaestro(5));
 
 
-        inv.setItem(0, citems.getSeparator());
+        inv.setItem(0, citems.getSeparator(15));
         for (int i = 8; i < 19; i++) {
-            inv.setItem(i, citems.getSeparator());
+            inv.setItem(i, citems.getSeparator(15));
         }
         for (int i = 26; i < 45; i++) {
-            inv.setItem(i, citems.getSeparator());
+            inv.setItem(i, citems.getSeparator(15));
         }
 
         inv.setItem(40, citems.getCraft());
