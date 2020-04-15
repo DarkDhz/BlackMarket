@@ -1,4 +1,4 @@
-package dev.darkhorizon.es.black.bosses;
+package dev.darkhorizon.es.black.bosses.entities;
 
 import dev.darkhorizon.es.black.Data.temp.TempData;
 import dev.darkhorizon.es.black.Main;
@@ -87,12 +87,5 @@ public class ZombieKing implements CustomBoss<ZombieKing> {
         return item;
     }
 
-    public static void updateTarget(Zombie entity) {
-        for (Entity en : entity.getNearbyEntities(20, 5, 20)) {
-            if (en instanceof Player) {
-                entity.setTarget((LivingEntity) en);
-                break;
-            }
-        }
-    }
+
 }

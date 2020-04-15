@@ -1,0 +1,4 @@
+lang:
+  global:
+    prefix: "&6&lBOSS &8||&7"
+    only_players: "%prefix ¡Este commando solo se puede ejecutar via usuario!"

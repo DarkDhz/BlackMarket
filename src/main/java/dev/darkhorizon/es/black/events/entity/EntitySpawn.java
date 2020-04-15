@@ -3,18 +3,17 @@ package dev.darkhorizon.es.black.events.entity;
 import dev.darkhorizon.es.black.Data.temp.DPList;
 import dev.darkhorizon.es.black.Data.temp.TempData;
 import dev.darkhorizon.es.black.Main;
-import dev.darkhorizon.es.black.bosses.CustomCreeper;
-import dev.darkhorizon.es.black.bosses.ZombieKing;
+import dev.darkhorizon.es.black.bosses.entities.CustomCreeper;
 import dev.darkhorizon.es.black.events.boss.BossDeath;
 import dev.darkhorizon.es.black.events.boss.BossSpawn;
 import dev.darkhorizon.es.black.utils.ActionBar;
+import dev.darkhorizon.es.black.utils.BossUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import java.util.List;
 import java.util.Random;
 
 public class EntitySpawn implements Listener {
@@ -43,7 +42,7 @@ public class EntitySpawn implements Listener {
                 CustomCreeper.attack(entity);
                 Random random = new Random();
                 if (random.nextInt(10) == 3) {
-                    ZombieKing.updateTarget((Zombie) entity);
+                    BossUtils.updateTarget((Zombie) entity);
                 }
             }
         }.runTaskTimer(plugin, 0, 3*20);
@@ -63,7 +62,7 @@ public class EntitySpawn implements Listener {
                 CustomCreeper.attack(entity);
                 Random random = new Random();
                 if (random.nextInt(10) == 3) {
-                    CustomCreeper.updateTarget((Creeper) entity);
+                    BossUtils.updateTarget((Creeper) entity);
                 }
                 int result = random.nextInt(100);
                 if (result < 10) {

@@ -91,7 +91,7 @@ public class EntityDamageByEntity implements Listener {
             return true;
         }
         if (damager.hasMetadata("suicide_minion") && target instanceof Player) {
-            damager.damage(10000);
+            damager.remove();
 
             damager.getWorld().playEffect(damager.getLocation(), Effect.EXPLOSION, null);
             damager.getWorld().playSound(damager.getLocation(), Sound.EXPLODE, 1, 0);

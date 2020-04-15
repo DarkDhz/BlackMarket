@@ -9,6 +9,7 @@ import dev.darkhorizon.es.black.items.CommonItems;
 import dev.darkhorizon.es.black.items.GiveItems;
 import dev.darkhorizon.es.black.items.ItemListItems;
 import dev.darkhorizon.es.black.items.MainItems;
+import dev.darkhorizon.es.black.utils.Comparations;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -48,7 +49,7 @@ public class InventoryEvents implements Listener {
         }
         if (inv.getTitle().contains(MainGUI.title)) {
             event.setCancelled(true);
-            if (validateItem(item, main_items.getItemList())) {
+            if (Comparations.validateItem(item, main_items.getItemList())) {
                 GUI gui = new ItemListGUI();
                 gui.generateInventory(player);
             }
@@ -56,7 +57,7 @@ public class InventoryEvents implements Listener {
         }
         if (inv.getTitle().contains(ItemListGUI.title)) {
             event.setCancelled(true);
-            if (validateItem(item, list_items.getLanzaMeteoros())) {
+            if (Comparations.validateItem(item, list_items.getLanzaMeteoros())) {
                 GUI gui = new LanzaMeteoros();
                 gui.generateInventory(player);
             }
@@ -66,7 +67,7 @@ public class InventoryEvents implements Listener {
             if (event.getSlot() > 54 || (event.getSlot() > 19 && event.getSlot() < 26)) {
                 return;
             }
-            if (validateItem(item, common_items.getCraft())) {
+            if (Comparations.validateItem(item, common_items.getCraft())) {
                 player.getInventory().addItem(give_items.getLanzaMeteoros());
                 player.closeInventory();
                 player.playSound(player.getLocation(), Sound.ANVIL_BREAK, 10F, 3F);
@@ -80,13 +81,5 @@ public class InventoryEvents implements Listener {
         }
     }
 
-    private boolean validateItem(ItemStack item, ItemStack toCompare) {
-        if (item.getType() != toCompare.getType()) {
-            return false;
-        }
-        if (!item.hasItemMeta()) {
-            return false;
-        }
-        return item.getItemMeta().getDisplayName().equals(toCompare.getItemMeta().getDisplayName());
-    }
+
 }

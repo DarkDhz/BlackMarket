@@ -2,9 +2,11 @@ package dev.darkhorizon.es.black.commands;
 
 import dev.darkhorizon.es.black.Data.temp.TempData;
 import dev.darkhorizon.es.black.Main;
-import dev.darkhorizon.es.black.bosses.CustomBoss;
-import dev.darkhorizon.es.black.bosses.CustomCreeper;
-import dev.darkhorizon.es.black.bosses.ZombieKing;
+import dev.darkhorizon.es.black.bosses.entities.CustomBoss;
+import dev.darkhorizon.es.black.bosses.entities.CustomCreeper;
+import dev.darkhorizon.es.black.bosses.entities.ZombieKing;
+import dev.darkhorizon.es.black.config.Lang;
+import dev.darkhorizon.es.black.config.Perms;
 import dev.darkhorizon.es.black.gui.BossList;
 import dev.darkhorizon.es.black.gui.GUI;
 import org.bukkit.command.Command;
@@ -17,6 +19,8 @@ public class VirtualBoss implements CommandExecutor {
 
     private static final Main plugin = Main.getPlugin(Main.class);
     private static final TempData temp_data = TempData.getInstance();
+    private static final Lang lang = Lang.getInstance();
+    private static final Perms perms = Perms.getInstance();
 
 
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
@@ -46,22 +50,23 @@ public class VirtualBoss implements CommandExecutor {
                 gui.generateInventory(launcher);
                 return;
             }
-            if (args[0].equalsIgnoreCase("killall") && launcher.hasPermission("virtual.boss.kill")) {
+            if (args[0].equalsIgnoreCase("killall") && launcher.hasPermission(perms.vb_kill)) {
                 int count = 0;
-                launcher.sendMessage("" + temp_data.getEntities().keySet());
-                for (LivingEntity entity : temp_data.getEntities().values()) {
-                    if (!entity.isDead() && entity != null) {
-                        launcher.sendMessage("Eliminando " + entity.getUniqueId());
-                        entity.damage(100000);
-                        count++;
-                    } else {
-                        launcher.sendMessage("Error con la entidad " + entity.getUniqueId());
+                while (!temp_data.getEntities().isEmpty() && count < 100) {
+                    try {
+                        for (LivingEntity e : temp_data.getEntities().values()) {
+                            temp_data.getEntities().remove(e.getUniqueId());
+                            e.remove();
+                            count++;
+                        }
+                    } catch (Exception ignored) {
                     }
+
                 }
                 launcher.sendMessage("§cSe han eliminado " + count + " entidades");
                 return;
             }
-            if (args[0].equalsIgnoreCase("spawn") && launcher.hasPermission("virtual.boss.spawn")) {
+            if (args[0].equalsIgnoreCase("spawn") && launcher.hasPermission(perms.vb_spawn)) {
                 launcher.sendMessage("Bosses Disponibles");
                 launcher.sendMessage("/virtualboss spawn creeper");
                 launcher.sendMessage("/virtualboss spawn reyzombie");
@@ -70,14 +75,23 @@ public class VirtualBoss implements CommandExecutor {
 
         } else {
             if (args[0].equals("spawn")) {
-                if (args[1].equalsIgnoreCase("creeper") && launcher.hasPermission("virtual.boss.spawn")) {
+                if (args[1].equalsIgnoreCase("creeper") && launcher.hasPermission(perms.vb_spawn)) {
                     CustomBoss<CustomCreeper> boss = new CustomCreeper(launcher.getLocation());
                     launcher.sendMessage("Has creado un Boss Creeper en tu localizacion.");
                     return;
                 }
-                if (args[1].equalsIgnoreCase("reyzombie") && launcher.hasPermission("virtual.boss.spawn")) {
+                if (args[1].equalsIgnoreCase("reyzombie") && launcher.hasPermission(perms.vb_spawn)) {
                     CustomBoss<ZombieKing> boss = new ZombieKing(launcher.getLocation());
                     launcher.sendMessage("Has creado un Boss Creeper en tu localizacion.");
+                    return;
+                }
+                if (args[1].equalsIgnoreCase("test") && launcher.hasPermission(perms.vb_spawn)) {
+                    CustomCreeper.generateEntity(launcher.getLocation());
+                    CustomCreeper.generateEntity(launcher.getLocation());
+                    CustomCreeper.generateEntity(launcher.getLocation());
+                    CustomCreeper.generateEntity(launcher.getLocation());
+                    CustomCreeper.generateEntity(launcher.getLocation());
+                    launcher.sendMessage("Has realizado el test");
                     return;
                 }
             }

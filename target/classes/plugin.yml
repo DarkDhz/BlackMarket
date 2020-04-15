@@ -1,6 +1,7 @@
 name: VirtualBosses
 main: dev.darkhorizon.es.black.Main
 version: "1.0"
+load: POSTWORLD
 commands:
   blackmarket:
     usage: /<command>
