@@ -1,5 +1,5 @@
 name: VirtualBosses
-main: dev.darkhorizon.es.black.Main
+main: dev.darkhorizon.es.virtualbosses.Main
 version: "1.0"
 depend: [ProtocolLib]
 commands:
