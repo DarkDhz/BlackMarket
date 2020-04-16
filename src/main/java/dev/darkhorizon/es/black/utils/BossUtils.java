@@ -23,6 +23,11 @@ public class BossUtils {
     private final static FileManager fm = FileManager.getInstance();
     private static final Main plugin = Main.getPlugin(Main.class);
 
+    /**
+     * Method to notify players near to the boss
+     * @param entity The Boss
+     * @param skill The Skill Name
+     */
     public static void notifyPlayers(Entity entity, String skill) {
         Location loc = entity.getLocation();
         for (Player player : entity.getWorld().getPlayers()) {
@@ -33,6 +38,10 @@ public class BossUtils {
         }
     }
 
+    /**
+     * Method to update the entity target
+     * @param entity The Boss
+     */
     public static void updateTarget(Creature entity) {
         for (Entity en : entity.getNearbyEntities(20, 5, 20)) {
             if (en instanceof Player) {
@@ -42,6 +51,12 @@ public class BossUtils {
         }
     }
 
+    /**
+     * Method to get all nearly boss players
+     * @param entity The Boss
+     * @param dis Distance between boss and player
+     * @return List of all players that accomplish the requirements
+     */
     public static List<Player> getNearPlayers(Entity entity, int dis) {
         List<Player> list = new ArrayList<>();
         Location loc = entity.getLocation();
@@ -54,6 +69,13 @@ public class BossUtils {
         return list;
     }
 
+    /**
+     * Method to get a valid random location to spawn entity
+     * @param loc Initial location
+     * @param max_x Max X distance from Boss
+     * @param max_z Max Z distance from BoSS
+     * @return Valid Location
+     */
     public static Location getValidLocation(Location loc, int max_x, int max_z) {
         Random random = new Random();
         int x = random.nextInt(max_x);
@@ -80,6 +102,12 @@ public class BossUtils {
         return new Location(loc.getWorld(), loc.getBlockX()+x, loc.getBlockY(), loc.getBlockZ() + z);
     }
 
+    /**
+     * Method to get Random entity number
+     * @param entity The Boss
+     * @param max Max number of entities
+     * @return Number of entities to spawn
+     */
     public static int getMinionCount(Entity entity, int max) {
         Random random = new Random();
 
@@ -101,6 +129,9 @@ public class BossUtils {
         return "UNDONE";
     }
 
+    /**
+     * Method to select the next spawned boss
+     */
     public static void randomSpawn() {
         tempData.setLastSpawn(Calendar.getInstance().getTime());
 
@@ -124,18 +155,26 @@ public class BossUtils {
 
     }
 
+    /**
+     * Method to send to near players the ActionBar with boss info
+     * @param entity The Boss
+     */
     private static void sendMessage(LivingEntity entity) {
-        for (Entity player : entity.getNearbyEntities(10,10, 10)) {
-            if (player instanceof Player) {
-
-                String msg = entity.getCustomName() + " §8» §7Vida restante: §6" + Math.round(entity.getHealth())
-                        + "§7/§6" + Math.round(entity.getMaxHealth());
-                ActionBar.sendMessage((Player) player, msg);
-
-            }
+        List<Player> near = getNearPlayers(entity, 50);
+        if (near.isEmpty()) {
+            return;
+        }
+        String msg = entity.getCustomName() + " §8» §7Vida restante: §6" + Math.round(entity.getHealth())
+                + "§7/§6" + Math.round(entity.getMaxHealth());
+        for (Player player : near) {
+            ActionBar.sendMessage((Player) player, msg);
         }
     }
 
+    /**
+     * Method to manage Boss Spawn - SKills, Select target, Death event...
+     * @param entity The Boss
+     */
     public static void manageKingSpawn(final LivingEntity entity) {
         tempData.getBoss_damagers().put(entity.getUniqueId(), new DPList());
         new BukkitRunnable() {
@@ -153,6 +192,10 @@ public class BossUtils {
         }.runTaskTimer(plugin, 0, 3*20);
     }
 
+    /**
+     * Method to manage Boss Spawn - SKills, Select target, Death event...
+     * @param entity The Boss
+     */
     public static void manageCreeperSpawn(final LivingEntity entity) {
         tempData.getBoss_damagers().put(entity.getUniqueId(), new DPList());
         new BukkitRunnable() {
@@ -169,18 +212,36 @@ public class BossUtils {
         }.runTaskTimer(plugin, 0, 3*20);
     }
 
-    public static void manageGolemSpawn(LivingEntity entity) {
+    /**
+     * Method to manage Boss Spawn - SKills, Select target, Death event...
+     * @param entity The Boss
+     */
+    public static void manageGolemSpawn(final LivingEntity entity) {
         tempData.getBoss_damagers().put(entity.getUniqueId(), new DPList());
     }
 
-    public static void manageDamnedSpawn(LivingEntity entity) {
+    /**
+     * Method to manage Boss Spawn - SKills, Select target, Death event...
+     * @param entity The Boss
+     */
+    public static void manageDamnedSpawn(final LivingEntity entity) {
         tempData.getBoss_damagers().put(entity.getUniqueId(), new DPList());
     }
 
-    public static void manageInvocatorSpawn(LivingEntity entity) {
+    /**
+     * Method to manage Boss Spawn - SKills, Select target, Death event...
+     * @param entity The Boss
+     */
+    public static void manageInvocatorSpawn(final LivingEntity entity) {
         tempData.getBoss_damagers().put(entity.getUniqueId(), new DPList());
     }
 
+    /**
+     * Method to show the Top Damagers in global chat
+     * @param dp List of players that damaged the boss
+     * @param uuid Boss UUID
+     * @param name Boss name
+     */
     public static void manageTopShow(DPList dp, UUID uuid, String name) {
         Bukkit.broadcastMessage("§4");
         Bukkit.broadcastMessage("§8§m---------§8[§r §e" + name + "§7 ha muerto §8]§r§8§m---------");
@@ -203,5 +264,5 @@ public class BossUtils {
         }
         tempData.getBoss_damagers().remove(uuid);
     }
-    
+
 }
