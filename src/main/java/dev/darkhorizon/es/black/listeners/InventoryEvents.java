@@ -1,4 +1,4 @@
-package dev.darkhorizon.es.black.events;
+package dev.darkhorizon.es.black.listeners;
 
 import dev.darkhorizon.es.black.gui.BossList;
 import dev.darkhorizon.es.black.gui.GUI;

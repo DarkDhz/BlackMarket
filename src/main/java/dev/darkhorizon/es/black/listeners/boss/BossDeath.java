@@ -1,6 +1,5 @@
-package dev.darkhorizon.es.black.events.boss;
+package dev.darkhorizon.es.black.listeners.boss;
 
-import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;

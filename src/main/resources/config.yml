@@ -1,3 +1,9 @@
+spawn:
+  world: "world"
+  loc:
+    x: -117
+    y: 80
+    z: 356
 lang:
   global:
     prefix: "&6&lBOSS &8||&7"

@@ -12,7 +12,7 @@ public class ItemListGUI implements GUI{
     public static String title = "§c§l»§r §fItems Disponibles";
 
     public void generateInventory(Player p) {
-        Inventory inv = Bukkit.createInventory(p, 3*9, title);
+        Inventory inv = Bukkit.createInventory(p, 27, title);
 
         inv.setItem(10, items.getLanzaMeteoros());
 

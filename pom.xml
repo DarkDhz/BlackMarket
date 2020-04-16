@@ -42,6 +42,12 @@
             <systemPath>${basedir}/lib/dev.jar</systemPath>
         </dependency>
         <dependency>
+            <artifactId>..</artifactId>
+            <groupId>protocolib</groupId>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/ProtocolLib.jar</systemPath>
+        </dependency>
+        <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations-java5</artifactId>
             <version>RELEASE</version>

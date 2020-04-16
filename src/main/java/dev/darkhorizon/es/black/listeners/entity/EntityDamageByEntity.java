@@ -1,6 +1,6 @@
-package dev.darkhorizon.es.black.events.entity;
+package dev.darkhorizon.es.black.listeners.entity;
 
-import dev.darkhorizon.es.black.Data.temp.TempData;
+import dev.darkhorizon.es.black.data.temp.TempData;
 import dev.darkhorizon.es.black.Main;
 import org.bukkit.Effect;
 import org.bukkit.Sound;

@@ -1,7 +1,5 @@
-package dev.darkhorizon.es.black.Data.temp;
+package dev.darkhorizon.es.black.data.temp;
 
-import dev.darkhorizon.es.black.Data.temp.DPList;
-import dev.darkhorizon.es.black.items.ItemListItems;
 import org.bukkit.entity.LivingEntity;
 
 import java.util.*;
@@ -9,14 +7,18 @@ import java.util.*;
 public class TempData {
 
     private static TempData INSTANCE = null;
+
     private Map<UUID, LivingEntity> entities;
     private Map<UUID, Integer> shoot_challenge;
     private Map<UUID, DPList> boss_damagers;
+    private Date last_spawn;
 
     private TempData() {
         entities = new HashMap<UUID, LivingEntity>();
         shoot_challenge = new HashMap<UUID, Integer>();
         boss_damagers = new HashMap<UUID, DPList>();
+        Calendar cal = Calendar.getInstance();
+        last_spawn = cal.getTime();
         //TODO Singleton for only 1 object instance
     }
 
@@ -45,5 +47,13 @@ public class TempData {
 
     public Map<UUID, DPList> getBoss_damagers() {
         return boss_damagers;
+    }
+
+    public Date getLastSpawn() {
+        return last_spawn;
+    }
+
+    public void setLastSpawn(Date last_spawn) {
+        this.last_spawn = last_spawn;
     }
 }

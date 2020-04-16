@@ -1,4 +1,4 @@
-package dev.darkhorizon.es.black.Data.sql;
+package dev.darkhorizon.es.black.data.sql;
 
 import dev.darkhorizon.es.black.Main;
 import org.bukkit.Bukkit;

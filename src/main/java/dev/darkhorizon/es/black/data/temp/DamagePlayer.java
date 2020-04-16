@@ -1,4 +1,4 @@
-package dev.darkhorizon.es.black.Data.temp;
+package dev.darkhorizon.es.black.data.temp;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -22,12 +22,6 @@ public class DamagePlayer implements Comparable{
 
     public String getUuid() {
         return uuid;
-    }
-
-
-    public int compareTo(DamagePlayer comp) {
-        double compareDamage = comp.getDamage();
-        return (int) (this.damage-compareDamage);
     }
 
     public int compareTo(@NotNull Object comp) {

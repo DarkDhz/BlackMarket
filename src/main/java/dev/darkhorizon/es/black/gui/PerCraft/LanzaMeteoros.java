@@ -16,7 +16,7 @@ public class LanzaMeteoros implements GUI {
     public static String title = "§0§l✦ §cLanza Meteoros §0§l✦";
 
     public void generateInventory(Player p) {
-        Inventory inv = Bukkit.createInventory(p, 5*9, title);
+        Inventory inv = Bukkit.createInventory(p, 45, title);
 
         inv.setItem(1, lm_items.getTiroCertero(p));
         inv.setItem(2, lm_items.getEssencia(p));

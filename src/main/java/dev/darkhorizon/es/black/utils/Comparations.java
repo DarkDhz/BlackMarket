@@ -13,4 +13,17 @@ public class Comparations {
         }
         return item.getItemMeta().getDisplayName().equals(toCompare.getItemMeta().getDisplayName());
     }
+
+    public static boolean validateItem(ItemStack item, ItemStack toCompare, int quantity) {
+        if (item.getType() != toCompare.getType()) {
+            return false;
+        }
+        if (!item.hasItemMeta()) {
+            return false;
+        }
+        if (!item.getItemMeta().getDisplayName().equals(toCompare.getItemMeta().getDisplayName())) {
+            return false;
+        }
+        return item.getAmount() >= quantity;
+    }
 }

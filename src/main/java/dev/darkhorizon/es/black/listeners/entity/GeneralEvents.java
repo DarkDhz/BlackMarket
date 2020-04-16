@@ -1,7 +1,5 @@
-package dev.darkhorizon.es.black.events.entity;
+package dev.darkhorizon.es.black.listeners.entity;
 
-import dev.darkhorizon.es.black.Data.temp.TempData;
-import dev.darkhorizon.es.black.Main;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

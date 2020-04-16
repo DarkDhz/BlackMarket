@@ -1,6 +1,4 @@
-package dev.darkhorizon.es.black.Data.temp;
-
-import dev.darkhorizon.es.black.Data.temp.DamagePlayer;
+package dev.darkhorizon.es.black.data.temp;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -14,7 +14,7 @@ public class MainGUI implements GUI{
     public static String title = "§c§l»§r §0Mercado Espacial";
 
     public void generateInventory(Player p) {
-        Inventory inv = Bukkit.createInventory(p, 3*9, title);
+        Inventory inv = Bukkit.createInventory(p, 27, title);
 
         inv.setItem(10, main_items.getHelp());
         inv.setItem(16, main_items.getItemList());
