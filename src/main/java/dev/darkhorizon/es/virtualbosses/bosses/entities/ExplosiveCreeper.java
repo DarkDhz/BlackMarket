@@ -98,26 +98,22 @@ public class ExplosiveCreeper implements CustomBoss<ExplosiveCreeper> {
     }
 
     public static void spawnRandomTNT(LivingEntity entity) {
-        Random random = new Random();
+        if (temp_data.getEntities().size() > 100) {
+            return;
+        }
         BossUtils.notifyPlayers(entity, "Lluvia Explosiva");
         for (int i = 0; i < 5; i++) {
-
-            int x = random.nextInt(10);
-            int z = random.nextInt(10);
-            if (random.nextBoolean()) {
-                x = -x;
-            }
-            if (random.nextBoolean()) {
-                z = -z;
-            }
-            TNTPrimed tnt = entity.getWorld().spawn(entity.getLocation().add(x, 10, z), TNTPrimed.class);
+            Location new_loc = BossUtils.getValidLocation(entity.getLocation(), 8, 8);
+            TNTPrimed tnt = new_loc.getWorld().spawn(new_loc, TNTPrimed.class);
             tnt.setFuseTicks(100);
         }
 
     }
 
     public static void spawnMinions(LivingEntity entity) {
-
+        if (temp_data.getEntities().size() > 100) {
+            return;
+        }
         int count = BossUtils.getMinionCount(entity, 16);
         if (count < 0) {
             return;
@@ -129,6 +125,9 @@ public class ExplosiveCreeper implements CustomBoss<ExplosiveCreeper> {
     }
 
     public static void useNuke(final LivingEntity entity) {
+        if (temp_data.getEntities().size() > 100) {
+            return;
+        }
         BossUtils.notifyPlayers(entity, "Nuke");
         List<Player> near = BossUtils.getNearPlayers(entity, 25);
         for (Player target : near) {
@@ -145,6 +144,9 @@ public class ExplosiveCreeper implements CustomBoss<ExplosiveCreeper> {
     }
 
     public static void spawnProtectors(LivingEntity entity) {
+        if (temp_data.getEntities().size() > 100) {
+            return;
+        }
         BossUtils.notifyPlayers(entity, "Protectores");
     }
 
@@ -159,6 +161,8 @@ public class ExplosiveCreeper implements CustomBoss<ExplosiveCreeper> {
         minion.setMetadata("suicide_minion", new FixedMetadataValue(plugin, "suicide_minion"));
         Chicken chicken = new_loc.getWorld().spawn(new_loc, Chicken.class);
         chicken.setPassenger(minion);
+        chicken.setMetadata("secundary", new FixedMetadataValue(plugin, "secundary"));
+
         chicken.setAdult();
         chicken.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 3), true);
         temp_data.getEntities().put(minion.getUniqueId(), minion);

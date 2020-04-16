@@ -22,7 +22,7 @@ public class ZombieKing implements CustomBoss<ZombieKing> {
     private static final Main plugin = Main.getPlugin(Main.class);
     private static final TempData temp_data = TempData.getInstance();
 
-    public static String name = "§a§lRey Zombie";
+    public static String name = "§c§lRey Zombie";
     public static int health = 400;
 
     public ZombieKing(Location loc) {
@@ -109,7 +109,9 @@ public class ZombieKing implements CustomBoss<ZombieKing> {
     }
 
     public static void generateArchers(LivingEntity entity) {
-
+        if (temp_data.getEntities().size() > 100) {
+            return;
+        }
         int count = BossUtils.getMinionCount(entity, 10);
         if (count < 0) {
             return;
@@ -147,13 +149,16 @@ public class ZombieKing implements CustomBoss<ZombieKing> {
         mount.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 3), true);
         mount.getInventory().setSaddle(new ItemStack(Material.SADDLE, 1));
         mount.setPassenger(minion);
-        mount.setMetadata("SoldierHorse", new FixedMetadataValue(plugin, "customhorse"));
+        mount.setMetadata("secundary", new FixedMetadataValue(plugin, "secundary"));
         temp_data.getEntities().put(minion.getUniqueId(), minion);
         temp_data.getEntities().put(mount.getUniqueId(), mount);
     }
 
     public static void generateSoldiers(LivingEntity entity) {
-        int count = BossUtils.getMinionCount(entity, 10);
+        if (temp_data.getEntities().size() > 100) {
+            return;
+        }
+        int count = BossUtils.getMinionCount(entity, 8);
         if (count < 0) {
             return;
         }
@@ -201,6 +206,9 @@ public class ZombieKing implements CustomBoss<ZombieKing> {
     }
 
     public static void generateBandits(LivingEntity entity) {
+        if (temp_data.getEntities().size() > 100) {
+            return;
+        }
         int count = BossUtils.getMinionCount(entity, 10);
         if (count < 0) {
             return;

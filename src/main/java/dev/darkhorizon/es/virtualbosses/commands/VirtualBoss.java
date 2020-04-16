@@ -7,6 +7,7 @@ import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.wrappers.ChunkCoordIntPair;
 import com.comphenix.protocol.wrappers.MultiBlockChangeInfo;
 import com.comphenix.protocol.wrappers.WrappedBlockData;
+import dev.darkhorizon.es.virtualbosses.api.json.FancyMessage;
 import dev.darkhorizon.es.virtualbosses.bosses.entities.*;
 import dev.darkhorizon.es.virtualbosses.data.temp.TempData;
 import dev.darkhorizon.es.virtualbosses.Main;
@@ -16,10 +17,7 @@ import dev.darkhorizon.es.virtualbosses.config.Perms;
 import dev.darkhorizon.es.virtualbosses.gui.BossList;
 import dev.darkhorizon.es.virtualbosses.gui.GUI;
 import dev.darkhorizon.es.virtualbosses.utils.BossUtils;
-import org.bukkit.Bukkit;
-import org.bukkit.Chunk;
-import org.bukkit.Location;
-import org.bukkit.Material;
+import org.bukkit.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -27,7 +25,9 @@ import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 public class VirtualBoss implements CommandExecutor {
 
@@ -51,17 +51,44 @@ public class VirtualBoss implements CommandExecutor {
             launcher.sendMessage("§5");
             launcher.sendMessage("§aComandos de Bosses:");
             launcher.sendMessage("§6");
-            launcher.sendMessage("§6- §f/virtualboss help");
-            launcher.sendMessage("§6- §f/virtualboss time");
-            launcher.sendMessage("§6- §f/virtualboss list");
-            if (launcher.isOp()) {
-                launcher.sendMessage("§c- §f/virtualboss spawn <mob>");
-                launcher.sendMessage("§c- §f/virtualboss killall");
+            launcher.sendMessage("§6- §f/boss help");
+            new FancyMessage("§6- §f/boss go").command("/warp mazmorra")
+                    .tooltip("§6Clic para ir a la mazmorra").send(launcher);
+            List<String> tool = new ArrayList<>();
+            tool.add("§6- §fProximo Spawn: §d" + BossUtils.getNextSpawn(Calendar.getInstance().getTime()));
+            tool.add("§2");
+            tool.add("§6Clic para verlo vía comando");
+            new FancyMessage("§6- §f/boss time").command("/vb time")
+                    .tooltip(tool).send(launcher);
+            tool = new ArrayList<>();
+            tool.add("§fBosses actuales: ");
+            tool.add("§6- " + ExplosiveCreeper.name);
+            tool.add("§6- " + ZombieKing.name);
+            tool.add("§6- " + ArmoredGolem.name);
+            tool.add("§6- " + DamnedSkeleton.name);
+            tool.add("§6- " + Invocator.name);
+            tool.add("§2");
+            tool.add("§6Clic para ver el menu");
+            new FancyMessage("§6- §f/boss list").command("/vb list")
+                    .tooltip(tool).send(launcher);
+            if (launcher.hasPermission(perms.vb_spawn)) {
+                new FancyMessage("§c- §f/boss spawn <mob>").command("/vb spawn")
+                        .tooltip("§6Clic para ver la los bosses disponibles").send(launcher);
+            }
+            if (launcher.hasPermission(perms.vb_kill)) {
+                new FancyMessage("§c- §f/boss killall").command("/vb killall")
+                        .tooltip("§6Clic para eliminar §f" + temp_data.getEntities().size() + " §6entidades").send(launcher);
             }
             launcher.sendMessage("§7");
         } else if (args.length == 1) {
-            if (args[0].equalsIgnoreCase("help")) {
+            if (args[0].equalsIgnoreCase("help") ||
+                    args[0].equalsIgnoreCase("ayuda")) {
                 launcher.performCommand("virtualbosses");
+                return;
+            }
+            if (args[0].equalsIgnoreCase("go") ||
+                    args[0].equalsIgnoreCase("tp")) {
+                launcher.performCommand("warp mazmorra");
                 return;
             }
             if (args[0].equalsIgnoreCase("time")) {
@@ -69,7 +96,8 @@ public class VirtualBoss implements CommandExecutor {
                         BossUtils.getNextSpawn(Calendar.getInstance().getTime())));
                 return;
             }
-            if (args[0].equalsIgnoreCase("list")) {
+            if (args[0].equalsIgnoreCase("list") ||
+                    args[0].equalsIgnoreCase("tiempo")) {
                 GUI gui = new BossList();
                 gui.generateInventory(launcher);
                 return;
@@ -90,18 +118,23 @@ public class VirtualBoss implements CommandExecutor {
                     }
 
                 }
-                launcher.sendMessage("§cSe han eliminado " + count + " entidades");
+                launcher.sendMessage(lang.global_prefix + " Se han eliminado §c" + count + "§f entidades");
                 return;
             }
             if (args[0].equalsIgnoreCase("spawn") && launcher.hasPermission(perms.vb_spawn)) {
                 launcher.sendMessage("§1");
                 launcher.sendMessage("§aBosses Disponibles:");
                 launcher.sendMessage("§2");
-                launcher.sendMessage("§c- §f/virtualboss spawn creeper");
-                launcher.sendMessage("§c- §f/virtualboss spawn reyzombie");
-                launcher.sendMessage("§c- §f/virtualboss spawn invocator");
-                launcher.sendMessage("§c- §f/virtualboss spawn golem");
-                launcher.sendMessage("§c- §f/virtualboss spawn skeleton");
+                new FancyMessage("§c- §f/boss spawn creeper").command("/vb spawn creeper")
+                        .tooltip("§6Clic para spawnear Creeper").send(launcher);
+                new FancyMessage("§c- §f/boss spawn reyzombie").command("/vb spawn reyzombie")
+                        .tooltip("§6Clic para spawnear Rey Zombie").send(launcher);
+                new FancyMessage("§c- §f/boss spawn invocator").command("/vb spawn invocator")
+                        .tooltip("§6Clic para spawnear Invocador").send(launcher);
+                new FancyMessage("§c- §f/boss spawn golem").command("/vb spawn golem")
+                        .tooltip("§6Clic para spawnear Golem").send(launcher);
+                new FancyMessage("§c- §f/boss spawn skeleton").command("/vb spawn skeleton")
+                        .tooltip("§6Clic para spawnear Damned Skeleton").send(launcher);
                 launcher.sendMessage("§3");
                 return;
             }
@@ -110,48 +143,34 @@ public class VirtualBoss implements CommandExecutor {
             if (args[0].equals("spawn")) {
                 if (args[1].equalsIgnoreCase("creeper") && launcher.hasPermission(perms.vb_spawn)) {
                     CustomBoss<ExplosiveCreeper> boss = new ExplosiveCreeper(launcher.getLocation());
-                    launcher.sendMessage("Has creado un Boss" + args[1] + "en tu localizacion.");
+                    launcher.sendMessage(lang.global_prefix + " Has creado un Boss" + ExplosiveCreeper.name + " §fen tu localizacion.");
                     return;
                 }
                 if (args[1].equalsIgnoreCase("reyzombie") && launcher.hasPermission(perms.vb_spawn)) {
                     CustomBoss<ZombieKing> boss = new ZombieKing(launcher.getLocation());
-                    launcher.sendMessage("Has creado un Boss " + args[1] + "en tu localizacion.");
+                    launcher.sendMessage(lang.global_prefix + " Has creado un Boss " + ZombieKing.name + " §fen tu localizacion.");
                     return;
                 }
                 if (args[1].equalsIgnoreCase("skeleton") && launcher.hasPermission(perms.vb_spawn)) {
                     CustomBoss<DamnedSkeleton> boss = new DamnedSkeleton(launcher.getLocation());
-                    launcher.sendMessage("Has creado un Boss " + args[1] + "en tu localizacion.");
+                    launcher.sendMessage(lang.global_prefix + " Has creado un Boss " + DamnedSkeleton.name + " §fen tu localizacion.");
                     return;
                 }
                 if (args[1].equalsIgnoreCase("invocator") && launcher.hasPermission(perms.vb_spawn)) {
                     CustomBoss<Invocator> boss = new Invocator(launcher.getLocation());
-                    launcher.sendMessage("Has creado un Boss " + args[1] + "en tu localizacion.");
+                    launcher.sendMessage(lang.global_prefix + " Has creado un Boss " + Invocator.name + " §fen tu localizacion.");
                     return;
                 }
                 if (args[1].equalsIgnoreCase("golem") && launcher.hasPermission(perms.vb_spawn)) {
                     CustomBoss<ArmoredGolem> boss = new ArmoredGolem(launcher.getLocation());
-                    launcher.sendMessage("Has creado un Boss " + args[1] + " en tu localizacion.");
+                    launcher.sendMessage(lang.global_prefix + " Has creado un Boss " + ArmoredGolem.name + " §fen tu localizacion.");
                     return;
                 }
                 if (args[1].equalsIgnoreCase("test2") && launcher.hasPermission(perms.vb_spawn)) {
                     System.out.println(BossUtils.getNextSpawn(Calendar.getInstance().getTime()));
                 }
                 if (args[1].equalsIgnoreCase("test") && launcher.hasPermission(perms.vb_spawn)) {
-                    Location loc = launcher.getLocation();
-                    //Location nueva = new Location(loc.getWorld(), loc.getBlockX(), loc.getBlockY()+5, loc.getBlockZ());
-                    //launcher.sendBlockChange(nueva, Material.STONE, (byte) 0);
-                    /*ProtocolManager pm = ProtocolLibrary.getProtocolManager();
-                    PacketContainer packet = pm.createPacket(PacketType.Play.Server.BLOCK_CHANGE);
-                    packet.getModifier().writeDefaults();
-                    packet.getBlockPositionModifier().write(0,
-                            new BlockPosition(loc.getBlockX(), loc.getBlockY()+4, loc.getBlockZ()));
-                    WrappedBlockData block = WrappedBlockData.createData(Material.STONE);
-                    packet.getBlockData().write(0, block);
-                    try {
-                        pm.sendServerPacket(launcher, packet);
-                    } catch (Exception ignored) {}
-
-                    */
+                    /*Location loc = launcher.getLocation();
                     ProtocolManager pm = ProtocolLibrary.getProtocolManager();
                     PacketContainer packet = pm.createPacket(PacketType.Play.Server.MULTI_BLOCK_CHANGE);
                     Chunk chunk = Bukkit.getWorld("world").getChunkAt(0, 0);
@@ -175,7 +194,7 @@ public class VirtualBoss implements CommandExecutor {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
                     }
-                    launcher.sendMessage("Has realizado el test");
+                    launcher.sendMessage("Has realizado el test");*/
                     return;
                 }
             }

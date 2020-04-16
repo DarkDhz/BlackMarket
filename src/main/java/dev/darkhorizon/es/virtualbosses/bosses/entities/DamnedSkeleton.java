@@ -24,7 +24,7 @@ public class DamnedSkeleton implements CustomBoss<DamnedSkeleton> {
     private static final TempData temp_data = TempData.getInstance();
 
 
-    public static String name = "§a§lEsqueleto Maldito";
+    public static String name = "§f§lEsqueleto Maldito";
     public static int health = 350;
 
     public DamnedSkeleton(Location loc) {

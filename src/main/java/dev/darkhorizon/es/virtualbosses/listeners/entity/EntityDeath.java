@@ -29,6 +29,10 @@ public class EntityDeath implements Listener {
     public void onEntityDeath(EntityDeathEvent event) {
         LivingEntity entity = event.getEntity();
         //CREEPER
+        if (entity.hasMetadata("secundary")) {
+            event.getDrops().clear();
+            return;
+        }
         if (entity.hasMetadata("CustomCreeper") || entity.hasMetadata("ZombieKing")
                 || entity.hasMetadata("ArmoredGolem")
                 || entity.hasMetadata("DamnedSkeleton")
