@@ -18,7 +18,6 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
-import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 import java.text.SimpleDateFormat;
@@ -66,6 +65,7 @@ public class BossUtils {
      * @param dis Distance between boss and player
      * @return List of all players that accomplish the requirements
      */
+    @NotNull
     public static List<Player> getNearPlayers(@NotNull Entity entity, int dis) {
         List<Player> list = new ArrayList<>();
         Location loc = entity.getLocation();
@@ -85,6 +85,7 @@ public class BossUtils {
      * @param max_z Max Z distance from BoSS
      * @return Valid Location
      */
+    @NotNull
     public static Location getValidLocation(@NotNull Location loc, int max_x, int max_z) {
         Random random = new Random();
         int x = random.nextInt(max_x);
@@ -143,6 +144,7 @@ public class BossUtils {
     }
 
     //TODO
+    @NotNull
     public static String getNextSpawn(@NotNull Date toCompare) {
         long time = (tempData.getLastSpawn().getTime() + 60*60*1000) - toCompare.getTime();
         return new SimpleDateFormat("hh:mm:ss").format(new Date(time));
@@ -365,7 +367,7 @@ public class BossUtils {
 
     /**
      * Method to manage Boss drops
-     * @param dp
+     * @param dp List of DamagePlayers
      */
     private static void manageKingLoot(@NotNull List<DamagePlayer> dp) {
         if (dp.get(0) != null) {
@@ -385,6 +387,9 @@ public class BossUtils {
                         kingZombieDrop.getKingChestPlate().getItemMeta().getDisplayName());
             }
         }
+        if (dp.size() < 2) {
+            return;
+        }
         if (dp.get(1) != null) {
             Player winner = Bukkit.getPlayer(dp.get(0).getUuid());
             Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "crate give to " + winner.getName() + " rare 1");
@@ -399,6 +404,9 @@ public class BossUtils {
                         kingZombieDrop.getKingChestPlate().getItemMeta().getDisplayName());
             }
 
+        }
+        if (dp.size() < 3) {
+            return;
         }
         if (dp.get(2) != null) {
             Player winner = Bukkit.getPlayer(dp.get(0).getUuid());

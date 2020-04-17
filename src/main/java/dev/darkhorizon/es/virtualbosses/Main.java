@@ -1,5 +1,6 @@
 package dev.darkhorizon.es.virtualbosses;
 
+import dev.darkhorizon.es.virtualbosses.config.Lang;
 import dev.darkhorizon.es.virtualbosses.data.sql.DataHandler;
 import dev.darkhorizon.es.virtualbosses.data.sql.SQLite;
 import dev.darkhorizon.es.virtualbosses.data.temp.TempData;
@@ -15,6 +16,7 @@ import dev.darkhorizon.es.virtualbosses.listeners.entity.EntitySpawn;
 import dev.darkhorizon.es.virtualbosses.utils.BossUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.LivingEntity;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -73,15 +75,42 @@ public class Main extends JavaPlugin {
     }
 
     private void initThread() {
-
+        final Plugin plugin = this;
         new BukkitRunnable() {
             boolean first = true;
+
             public void run() {
                 if (!first) {
+                    clearEntities();
                     BossUtils.randomSpawn();
                 } else {
                     first = false;
                 }
+                new BukkitRunnable() {
+                    @Override
+                    public void run() {
+                        Bukkit.broadcastMessage("§1");
+                        Bukkit.broadcastMessage(Lang.getInstance().info_spawn_time.replaceAll("%time", "10 minutos"));
+                        Bukkit.broadcastMessage("§2");
+                    }
+                }.runTaskLater(plugin, 110*60*20);
+                new BukkitRunnable() {
+                    @Override
+                    public void run() {
+                        Bukkit.broadcastMessage("§1");
+                        Bukkit.broadcastMessage(Lang.getInstance().info_spawn_time.replaceAll("%time", "5 minutos"));
+                        Bukkit.broadcastMessage("§2");
+                    }
+                }.runTaskLater(plugin, 115*60*20);
+                new BukkitRunnable() {
+                    @Override
+                    public void run() {
+                        Bukkit.broadcastMessage("§1");
+                        Bukkit.broadcastMessage(Lang.getInstance().info_spawn_time.replaceAll("%time", "2 minutos"));
+                        Bukkit.broadcastMessage("§2");
+                    }
+                }.runTaskLater(plugin, 118*60*20);
+
             }
         }.runTaskTimer(this, 0, 2*60*60*20);
     }
@@ -105,7 +134,5 @@ public class Main extends JavaPlugin {
             }
         }
     }
-
-
 
 }

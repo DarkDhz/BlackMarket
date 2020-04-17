@@ -1,6 +1,7 @@
 package dev.darkhorizon.es.virtualbosses.utils;
 
 import org.bukkit.inventory.ItemStack;
+import org.jetbrains.annotations.NotNull;
 
 public class Comparators {
 
@@ -10,7 +11,7 @@ public class Comparators {
      * @param toCompare Item to compare
      * @return true if equals, else otherwise
      */
-    public static boolean validateItem(ItemStack item, ItemStack toCompare) {
+    public static boolean validateItem(@NotNull ItemStack item, @NotNull ItemStack toCompare) {
         if (item.getType() != toCompare.getType()) {
             return false;
         }
@@ -28,7 +29,7 @@ public class Comparators {
      * @param quantity Quantity of item
      * @return true if equals, else otherwise
      */
-    public static boolean validateItem(ItemStack item, ItemStack toCompare, int quantity) {
+    public static boolean validateItem(@NotNull ItemStack item, @NotNull ItemStack toCompare, int quantity) {
         if (item.getType() != toCompare.getType()) {
             return false;
         }

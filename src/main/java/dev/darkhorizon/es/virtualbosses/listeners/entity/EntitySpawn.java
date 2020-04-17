@@ -7,6 +7,7 @@ import dev.darkhorizon.es.virtualbosses.utils.BossUtils;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.jetbrains.annotations.NotNull;
 
 public class EntitySpawn implements Listener {
 
@@ -18,7 +19,7 @@ public class EntitySpawn implements Listener {
      * @param event The event
      */
     @EventHandler
-    public void onBossSpawn(BossSpawn event) {
+    public void onBossSpawn(@NotNull BossSpawn event) {
         final LivingEntity entity = event.getEntity();
         if (entity.hasMetadata("CustomCreeper")) { BossUtils.manageCreeperSpawn(entity); return;}
         if (entity.hasMetadata("ZombieKing")) { BossUtils.manageKingSpawn(entity); return;}

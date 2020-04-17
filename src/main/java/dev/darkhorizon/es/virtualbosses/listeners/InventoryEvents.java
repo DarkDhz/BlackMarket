@@ -18,6 +18,7 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.jetbrains.annotations.NotNull;
 
 public class InventoryEvents implements Listener {
 
@@ -27,7 +28,7 @@ public class InventoryEvents implements Listener {
     private final GiveItems give_items = GiveItems.getInstance();
 
     @EventHandler
-    public void onClose(InventoryCloseEvent event) {
+    public void onClose(@NotNull InventoryCloseEvent event) {
         Player player = (Player) event.getPlayer();
         Inventory inv = event.getInventory();
         if (inv.getTitle().contains(LanzaMeteoros.title)) {
@@ -40,7 +41,7 @@ public class InventoryEvents implements Listener {
     }
 
     @EventHandler
-    public void onClick(InventoryClickEvent event) {
+    public void onClick(@NotNull InventoryClickEvent event) {
         Player player = (Player) event.getWhoClicked();
         Inventory inv = event.getClickedInventory();
         ItemStack item = event.getCurrentItem();

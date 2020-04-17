@@ -33,7 +33,8 @@ public class Lang {
 
     public String info_time = ConfigUtils.simpleReplace("lang.info.time", global_prefix, fm.getConfig());
     public String info_spawn = ConfigUtils.simpleReplace("lang.info.spawn", global_prefix, fm.getConfig());
-    public String info_final_rank= ConfigUtils.simpleReplace("lang.info.final_rank", global_prefix, fm.getConfig());
+    public String info_final_rank = ConfigUtils.simpleReplace("lang.info.final_rank", global_prefix, fm.getConfig());
+    public String info_spawn_time = ConfigUtils.simpleReplace("lang.info.spawn_time", global_prefix, fm.getConfig());
 
     //public String cmd_blackmarket_usage = "Usage: /blackmarket";
 

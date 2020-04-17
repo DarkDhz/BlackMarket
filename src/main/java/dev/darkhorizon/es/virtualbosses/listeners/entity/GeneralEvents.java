@@ -4,6 +4,7 @@ import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.*;
+import org.jetbrains.annotations.NotNull;
 
 
 public class GeneralEvents implements Listener {
@@ -13,7 +14,7 @@ public class GeneralEvents implements Listener {
      * @param event The event
      */
     @EventHandler
-    public void onExplode(EntityExplodeEvent event) {
+    public void onExplode(@NotNull EntityExplodeEvent event) {
 
         Entity entity = event.getEntity();
         if (entity.hasMetadata("CustomCreeper")) {
@@ -29,7 +30,7 @@ public class GeneralEvents implements Listener {
      * @param event The event
      */
     @EventHandler
-    public void onPrime(ExplosionPrimeEvent event) {
+    public void onPrime(@NotNull ExplosionPrimeEvent event) {
         Entity entity = event.getEntity();
         if (entity.hasMetadata("CustomCreeper")) {
             event.setCancelled(true);

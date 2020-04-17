@@ -160,6 +160,10 @@ public class Invocator implements CustomBoss<Invocator> {
         }
     }
 
+    /**
+     * Method to spawn Blazes Minion
+     * @param loc Initial Location
+     */
     private static void generateBlazesEntity(Location loc) {
         Location new_loc = BossUtils.getValidLocation(loc, 5, 5);
         Blaze minion = new_loc.getWorld().spawn(new_loc, Blaze.class);

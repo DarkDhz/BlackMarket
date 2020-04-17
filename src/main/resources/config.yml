@@ -10,5 +10,6 @@ lang:
     only_players: "%prefix ¡Este commando solo se puede ejecutar via usuario!"
   info:
     time: "%prefix El proximo Boss aparece en &a%time &fen la mazmorra."
+    spawn_time: "%prefix Quedan &9%time &fpara que aparezca el boss."
     spawn: "%prefix El Boss %name &fha aparecido en la mazmorra."
     final_rank: "%prefix §fHas quedado el §6TOP %top §fcon un daño total de §7(§d%damage§7)"

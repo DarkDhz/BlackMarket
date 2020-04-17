@@ -13,6 +13,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.inventory.ItemStack;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Random;
 
@@ -26,7 +27,7 @@ public class EntityDeath implements Listener {
      * @param event The event
      */
     @EventHandler
-    public void onEntityDeath(EntityDeathEvent event) {
+    public void onEntityDeath(@NotNull EntityDeathEvent event) {
         LivingEntity entity = event.getEntity();
         //CREEPER
         if (entity.hasMetadata("secundary")) {
@@ -95,7 +96,7 @@ public class EntityDeath implements Listener {
      * @param event The event
      */
     @EventHandler
-    public void onBossDeath(BossDeath event) {
+    public void onBossDeath(@NotNull BossDeath event) {
         DPList dp = temp_data.getBoss_damagers().get(event.getEntity().getUniqueId());
         if (dp == null) {
             return;

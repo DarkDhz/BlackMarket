@@ -29,7 +29,7 @@ public class ExplosiveCreeper implements CustomBoss<ExplosiveCreeper> {
      * Method to generate the boss
      * @param loc Where the boss is generated
      */
-    public ExplosiveCreeper(Location loc) {
+    public ExplosiveCreeper(@NotNull Location loc) {
         if (!loc.getWorld().isChunkLoaded(loc.getChunk())) {
             loc.getWorld().loadChunk(loc.getChunk());
         }
