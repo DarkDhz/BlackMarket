@@ -15,6 +15,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Random;
 
@@ -27,7 +28,11 @@ public class ArmoredGolem implements CustomBoss<ArmoredGolem> {
     public static String name = "§7§lGolem Blindado";
     public static int health = 600;
 
-    public ArmoredGolem(Location loc) {
+    /**
+     * Method to generate the boss
+     * @param loc Where the boss is generated
+     */
+    public ArmoredGolem(@NotNull Location loc) {
         if (!loc.getWorld().isChunkLoaded(loc.getChunk())) {
             loc.getWorld().loadChunk(loc.getChunk());
         }
@@ -51,6 +56,7 @@ public class ArmoredGolem implements CustomBoss<ArmoredGolem> {
         Bukkit.getPluginManager().callEvent(new BossSpawn(entity));
     }
 
+    @NotNull
     private ItemStack generateWeapon() {
         ItemStack item = new ItemStack(Material.DIAMOND_SWORD);
         item.addUnsafeEnchantment(Enchantment.DAMAGE_ALL, 12);
@@ -59,6 +65,7 @@ public class ArmoredGolem implements CustomBoss<ArmoredGolem> {
         return item;
     }
 
+    @NotNull
     private ItemStack generateHelmet() {
         ItemStack item = new ItemStack(Material.DIAMOND_HELMET);
         item.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 7);
@@ -66,6 +73,7 @@ public class ArmoredGolem implements CustomBoss<ArmoredGolem> {
         return item;
     }
 
+    @NotNull
     private ItemStack generateChestPlate() {
         ItemStack item = new ItemStack(Material.DIAMOND_CHESTPLATE);
         item.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 7);
@@ -73,6 +81,7 @@ public class ArmoredGolem implements CustomBoss<ArmoredGolem> {
         return item;
     }
 
+    @NotNull
     private ItemStack generateLeggings() {
         ItemStack item = new ItemStack(Material.DIAMOND_LEGGINGS);
         item.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 7);
@@ -80,6 +89,7 @@ public class ArmoredGolem implements CustomBoss<ArmoredGolem> {
         return item;
     }
 
+    @NotNull
     private ItemStack generateBoots() {
         ItemStack item = new ItemStack(Material.DIAMOND_BOOTS);
         item.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 7);
@@ -87,9 +97,12 @@ public class ArmoredGolem implements CustomBoss<ArmoredGolem> {
         return item;
     }
 
+    /**
+     * Method to manage Boss skills
+     * @param entity The boss
+     */
     public static void playSkill(LivingEntity entity) {
-        Random random = new Random();
-        if (random.nextInt(10) == 3) {
+        if (BossUtils.getChance(30)) {
             BossUtils.updateTarget((IronGolem) entity);
         }
 

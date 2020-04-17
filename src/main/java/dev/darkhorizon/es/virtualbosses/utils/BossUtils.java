@@ -14,8 +14,12 @@ import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.entity.*;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -33,7 +37,7 @@ public class BossUtils {
      * @param entity The Boss
      * @param skill The Skill Name
      */
-    public static void notifyPlayers(Entity entity, String skill) {
+    public static void notifyPlayers(@NotNull Entity entity, String skill) {
         Location loc = entity.getLocation();
         for (Player player : entity.getWorld().getPlayers()) {
             double distance = player.getLocation().distance(loc);
@@ -47,7 +51,7 @@ public class BossUtils {
      * Method to update the entity target
      * @param entity The Boss
      */
-    public static void updateTarget(Creature entity) {
+    public static void updateTarget(@NotNull Creature entity) {
         for (Entity en : entity.getNearbyEntities(20, 5, 20)) {
             if (en instanceof Player) {
                 entity.setTarget((LivingEntity) en);
@@ -62,7 +66,7 @@ public class BossUtils {
      * @param dis Distance between boss and player
      * @return List of all players that accomplish the requirements
      */
-    public static List<Player> getNearPlayers(Entity entity, int dis) {
+    public static List<Player> getNearPlayers(@NotNull Entity entity, int dis) {
         List<Player> list = new ArrayList<>();
         Location loc = entity.getLocation();
         for (Player player : entity.getWorld().getPlayers()) {
@@ -81,7 +85,7 @@ public class BossUtils {
      * @param max_z Max Z distance from BoSS
      * @return Valid Location
      */
-    public static Location getValidLocation(Location loc, int max_x, int max_z) {
+    public static Location getValidLocation(@NotNull Location loc, int max_x, int max_z) {
         Random random = new Random();
         int x = random.nextInt(max_x);
         int z = random.nextInt(max_z);
@@ -113,7 +117,7 @@ public class BossUtils {
      * @param max Max number of entities
      * @return Number of entities to spawn
      */
-    public static int getMinionCount(Entity entity, int max) {
+    public static int getMinionCount(@NotNull Entity entity, int max) {
         Random random = new Random();
 
         int count = 0;
@@ -129,8 +133,17 @@ public class BossUtils {
         return count;
     }
 
+    /**
+     * Method to get a probability result
+     * @param probability Probability of success
+     * @return
+     */
+    public static boolean getChance(int probability) {
+        return new Random().nextInt(100) < probability;
+    }
+
     //TODO
-    public static String getNextSpawn(Date toCompare) {
+    public static String getNextSpawn(@NotNull Date toCompare) {
         long time = (tempData.getLastSpawn().getTime() + 60*60*1000) - toCompare.getTime();
         return new SimpleDateFormat("hh:mm:ss").format(new Date(time));
     }
@@ -193,7 +206,7 @@ public class BossUtils {
      * Method to manage Boss Spawn - SKills, Select target, Death event...
      * @param entity The Boss
      */
-    public static void manageKingSpawn(final LivingEntity entity) {
+    public static void manageKingSpawn(@NotNull final LivingEntity entity) {
         tempData.getBoss_damagers().put(entity.getUniqueId(), new DPList());
         sendSpawnMessage(entity.getCustomName());
         new BukkitRunnable() {
@@ -214,7 +227,7 @@ public class BossUtils {
      * Method to manage Boss Spawn - SKills, Select target, Death event...
      * @param entity The Boss
      */
-    public static void manageCreeperSpawn(final LivingEntity entity) {
+    public static void manageCreeperSpawn(@NotNull final LivingEntity entity) {
         tempData.getBoss_damagers().put(entity.getUniqueId(), new DPList());
         sendSpawnMessage(entity.getCustomName());
         new BukkitRunnable() {
@@ -235,7 +248,7 @@ public class BossUtils {
      * Method to manage Boss Spawn - SKills, Select target, Death event...
      * @param entity The Boss
      */
-    public static void manageGolemSpawn(final LivingEntity entity) {
+    public static void manageGolemSpawn(@NotNull final LivingEntity entity) {
         tempData.getBoss_damagers().put(entity.getUniqueId(), new DPList());
         sendSpawnMessage(entity.getCustomName());
         new BukkitRunnable() {
@@ -255,7 +268,7 @@ public class BossUtils {
      * Method to manage Boss Spawn - SKills, Select target, Death event...
      * @param entity The Boss
      */
-    public static void manageDamnedSpawn(final LivingEntity entity) {
+    public static void manageDamnedSpawn(@NotNull final LivingEntity entity) {
         tempData.getBoss_damagers().put(entity.getUniqueId(), new DPList());
         sendSpawnMessage(entity.getCustomName());
         new BukkitRunnable() {
@@ -275,7 +288,7 @@ public class BossUtils {
      * Method to manage Boss Spawn - SKills, Select target, Death event...
      * @param entity The Boss
      */
-    public static void manageInvocatorSpawn(final LivingEntity entity) {
+    public static void manageInvocatorSpawn(@NotNull final LivingEntity entity) {
         tempData.getBoss_damagers().put(entity.getUniqueId(), new DPList());
         sendSpawnMessage(entity.getCustomName());
         new BukkitRunnable() {
@@ -286,7 +299,7 @@ public class BossUtils {
                     return;
                 }
                 sendMessage(entity);
-                //TODO;
+                Invocator.playSkill(entity);
             }
         }.runTaskTimer(plugin, 0, 3*20);
 
@@ -298,7 +311,7 @@ public class BossUtils {
      * @param uuid Boss UUID
      * @param name Boss name
      */
-    public static void manageTopShow(DPList dp, UUID uuid, String name) {
+    public static void manageTopShow(@NotNull DPList dp, UUID uuid, String name) {
         Bukkit.broadcastMessage("§4");
         Bukkit.broadcastMessage("§8§m---------§8[§r §e" + name + "§7 ha muerto §8]§r§8§m---------");
         Bukkit.broadcastMessage("§7Top 5 Asesinos:");
@@ -336,7 +349,7 @@ public class BossUtils {
      * @param name Boss name
      * @param dp Sorted list of players
      */
-    private static void manageLoot(String name, List<DamagePlayer> dp) {
+    private static void manageLoot(@NotNull String name, List<DamagePlayer> dp) {
         if (name.equals(ZombieKing.name)) {
             manageKingLoot(dp);
         } else if (name.equals(ExplosiveCreeper.name)){
@@ -354,37 +367,82 @@ public class BossUtils {
      * Method to manage Boss drops
      * @param dp
      */
-    private static void manageKingLoot(List<DamagePlayer> dp) {
+    private static void manageKingLoot(@NotNull List<DamagePlayer> dp) {
         if (dp.get(0) != null) {
             Player winner = Bukkit.getPlayer(dp.get(0).getUuid());
             winner.getInventory().addItem(kingZombieDrop.getBossHead());
+            winner.sendMessage(lang.global_prefix + " Has obtenido: " +
+                    kingZombieDrop.getBossHead().getItemMeta().getDisplayName());
             Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "crate give to " + winner.getName() + " rare 1");
+            if (getChance(30)) {
+                winner.sendMessage(lang.global_prefix + " Has obtenido: " +
+                        kingZombieDrop.getKingSword().getItemMeta().getDisplayName());
+                winner.getInventory().addItem(kingZombieDrop.getKingSword());
+            }
+            if (getChance(20)) {
+                winner.getInventory().addItem(kingZombieDrop.getKingChestPlate());
+                winner.sendMessage(lang.global_prefix + " Has obtenido: " +
+                        kingZombieDrop.getKingChestPlate().getItemMeta().getDisplayName());
+            }
         }
         if (dp.get(1) != null) {
             Player winner = Bukkit.getPlayer(dp.get(0).getUuid());
             Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "crate give to " + winner.getName() + " rare 1");
+            if (getChance(20)) {
+                winner.getInventory().addItem(kingZombieDrop.getKingSword());
+                winner.sendMessage(lang.global_prefix + " Has obtenido: " +
+                        kingZombieDrop.getKingSword().getItemMeta().getDisplayName());
+            }
+            if (getChance(15)) {
+                winner.getInventory().addItem(kingZombieDrop.getKingChestPlate());
+                winner.sendMessage(lang.global_prefix + " Has obtenido: " +
+                        kingZombieDrop.getKingChestPlate().getItemMeta().getDisplayName());
+            }
 
         }
         if (dp.get(2) != null) {
             Player winner = Bukkit.getPlayer(dp.get(0).getUuid());
             Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "crate give to " + winner.getName() + " rare 1");
-
+            if (getChance(15)) {
+                winner.getInventory().addItem(kingZombieDrop.getKingSword());
+                winner.sendMessage(lang.global_prefix + " Has obtenido : " +
+                        kingZombieDrop.getKingSword().getItemMeta().getDisplayName());
+            }
+            if (getChance(10)) {
+                winner.getInventory().addItem(kingZombieDrop.getKingChestPlate());
+            }
         }
     }
 
-    private static void manageCreeperLoot(List<DamagePlayer> dp) {
+    /**
+     * Method to manage drops when creeper boss dies
+     * @param dp List of DamagePlayers
+     */
+    private static void manageCreeperLoot(@NotNull List<DamagePlayer> dp) {
         //TODO
     }
 
-    private static void manageInvocatorLoot(List<DamagePlayer> dp) {
+    /**
+     * Method to manage drops when invocator boss dies
+     * @param dp List of DamagePlayers
+     */
+    private static void manageInvocatorLoot(@NotNull List<DamagePlayer> dp) {
         //TODO
     }
 
-    private static void manageDamnedLoot(List<DamagePlayer> dp) {
+    /**
+     * Method to manage drops when damned skeleton boss dies
+     * @param dp List of DamagePlayers
+     */
+    private static void manageDamnedLoot(@NotNull List<DamagePlayer> dp) {
         //TODO
     }
 
-    private static void manageGolemLoot(List<DamagePlayer> dp) {
+    /**
+     * Method to manage drops when damned Armored Golem dies
+     * @param dp List of DamagePlayers
+     */
+    private static void manageGolemLoot(@NotNull List<DamagePlayer> dp) {
         //TODO
     }
 
@@ -393,7 +451,7 @@ public class BossUtils {
      * @param event The event instance
      * @return If event is cancelled or not
      */
-    public static boolean manageKingDamage(EntityDamageByEntityEvent event) {
+    public static boolean manageKingDamage(@NotNull EntityDamageByEntityEvent event) {
         if (!(event.getEntity() instanceof LivingEntity)) {
             return false;
         }
@@ -425,7 +483,7 @@ public class BossUtils {
      * @param event The event instance
      * @return If event is cancelled or not
      */
-    public static boolean manageCreeperDamage(EntityDamageByEntityEvent event) {
+    public static boolean manageCreeperDamage(@NotNull EntityDamageByEntityEvent event) {
 
         if (!(event.getEntity() instanceof LivingEntity)) {
             return false;
@@ -468,6 +526,11 @@ public class BossUtils {
 
             target.damage(random.nextInt(15) + 10);
 
+            return false;
+        }
+
+        if (damager.hasMetadata("creeper_protector") && target instanceof Player) {
+            target.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 10, 1), true);
             return false;
         }
         return false;

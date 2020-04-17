@@ -30,6 +30,7 @@ public class EntityDeath implements Listener {
         LivingEntity entity = event.getEntity();
         //CREEPER
         if (entity.hasMetadata("secundary")) {
+            temp_data.getEntities().remove(entity.getUniqueId());
             event.getDrops().clear();
             return;
         }
@@ -45,29 +46,45 @@ public class EntityDeath implements Listener {
         if (entity.hasMetadata("suicide_minion")) {
             temp_data.getEntities().remove(entity.getUniqueId());
             event.getDrops().clear();
-            if (entity.getKiller() != null && entity instanceof Player) {
+            /*if (entity.getKiller() != null && entity instanceof Player) {
                 Random random = new Random();
                 int i = random.nextInt(100);
                 if (i <= 5){
                     event.getDrops().add(new ItemStack(Material.TNT));
                 }
-            }
+            }*/
             return;
         }
+        if (entity.hasMetadata("creeper_protector")) {
+            temp_data.getEntities().remove(entity.getUniqueId());
+            event.getDrops().clear();
+            return;
+        }
+
         // ZOMBIE MINIONS
         if (entity.hasMetadata("ProtectorSoldier")) {
+            temp_data.getEntities().remove(entity.getUniqueId());
             event.getDrops().clear();
             return;
         }
         if (entity.hasMetadata("BanditSoldier")) {
+            temp_data.getEntities().remove(entity.getUniqueId());
             event.getDrops().clear();
             return;
         }
         if (entity.hasMetadata("NormalSoldier")) {
+            temp_data.getEntities().remove(entity.getUniqueId());
             event.getDrops().clear();
             return;
         }
         if (entity.hasMetadata("SkeletonSoldier")) {
+            temp_data.getEntities().remove(entity.getUniqueId());
+            event.getDrops().clear();
+            return;
+        }
+        // INVOCATOR MINIONS
+        if (entity.hasMetadata("invocator_blazes")) {
+            temp_data.getEntities().remove(entity.getUniqueId());
             event.getDrops().clear();
             return;
         }

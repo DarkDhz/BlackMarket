@@ -14,6 +14,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Random;
 
@@ -25,7 +26,11 @@ public class ZombieKing implements CustomBoss<ZombieKing> {
     public static String name = "§c§lRey Zombie";
     public static int health = 400;
 
-    public ZombieKing(Location loc) {
+    /**
+     * Method to generate the boss
+     * @param loc Where the boss is generated
+     */
+    public ZombieKing(@NotNull Location loc) {
         if (!loc.getWorld().isChunkLoaded(loc.getChunk())) {
             loc.getWorld().loadChunk(loc.getChunk());
         }
@@ -45,70 +50,106 @@ public class ZombieKing implements CustomBoss<ZombieKing> {
         entity.setHealth(health);
         entity.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, Integer.MAX_VALUE, 3), true);
         entity.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 2), true);
-        entity.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Integer.MAX_VALUE, 4), true);
+        entity.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Integer.MAX_VALUE, 6), true);
         temp_data.getEntities().put(entity.getUniqueId(), entity);
         Bukkit.getPluginManager().callEvent(new BossSpawn(entity));
 
     }
 
+    /**
+     * Method to get Boss Weapon
+     * @return The item
+     */
+    @NotNull
     private ItemStack generateWeapon() {
         ItemStack item = new ItemStack(Material.DIAMOND_SWORD);
         item.addUnsafeEnchantment(Enchantment.DAMAGE_ALL, 12);
         item.addUnsafeEnchantment(Enchantment.DURABILITY, 7);
-        item.addUnsafeEnchantment(Enchantment.KNOCKBACK, 4);
+        item.addUnsafeEnchantment(Enchantment.FIRE_ASPECT, 5);
+        item.addUnsafeEnchantment(Enchantment.KNOCKBACK, 3);
         return item;
     }
 
+    /**
+     * Method to get Boss Helmet
+     * @return The item
+     */
+    @NotNull
     private ItemStack generateHelmet() {
         ItemStack item = new ItemStack(Material.GOLD_HELMET);
         item.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 7);
+        item.addUnsafeEnchantment(Enchantment.THORNS, 3);
         item.addUnsafeEnchantment(Enchantment.DURABILITY, 7);
         return item;
     }
 
+    /**
+     * Method to get Boss ChestPlate
+     * @return The item
+     */
+    @NotNull
     private ItemStack generateChestPlate() {
         ItemStack item = new ItemStack(Material.DIAMOND_CHESTPLATE);
         item.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 7);
+        item.addUnsafeEnchantment(Enchantment.THORNS, 3);
         item.addUnsafeEnchantment(Enchantment.DURABILITY, 7);
         return item;
     }
 
+    /**
+     * Method to get Boss Leggings
+     * @return The item
+     */
+    @NotNull
     private ItemStack generateLeggings() {
         ItemStack item = new ItemStack(Material.DIAMOND_LEGGINGS);
         item.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 7);
+        item.addUnsafeEnchantment(Enchantment.THORNS, 3);
         item.addUnsafeEnchantment(Enchantment.DURABILITY, 7);
         return item;
     }
 
+    /**
+     * Method to get Boss Boots
+     * @return The item
+     */
+    @NotNull
     private ItemStack generateBoots() {
         ItemStack item = new ItemStack(Material.DIAMOND_BOOTS);
         item.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 7);
+        item.addUnsafeEnchantment(Enchantment.THORNS, 3);
         item.addUnsafeEnchantment(Enchantment.DURABILITY, 7);
         return item;
     }
 
+    /**
+     * Method to manage Boss skills
+     * @param entity The boss
+     */
     public static void playSkill(LivingEntity entity) {
-        Random random = new Random();
-        if (random.nextInt(10) == 3) {
+        if (BossUtils.getChance(30)) {
             BossUtils.updateTarget((Zombie) entity);
         }
-        int result = random.nextInt(120);
-        if (result < 10) {
+        if (BossUtils.getChance(10)) {
             ZombieKing.generateArchers(entity);
+            return;
         }
-        if (result > 9 && result < 20) {
+        if (BossUtils.getChance(10)) {
             ZombieKing.generateSoldiers(entity);
+            return;
         }
-        if (result > 19 && result < 30) {
+        if (BossUtils.getChance(10)) {
             ZombieKing.generateBandits(entity);
+            return;
         }
-        if (result > 29 && result < 40) {
+        if (BossUtils.getChance(10)) {
             ZombieKing.generateProtector(entity);
+            return;
         }
 
     }
 
-    public static void generateArchers(LivingEntity entity) {
+    private static void generateArchers(LivingEntity entity) {
         if (temp_data.getEntities().size() > 100) {
             return;
         }
@@ -142,6 +183,7 @@ public class ZombieKing implements CustomBoss<ZombieKing> {
         weapon.addUnsafeEnchantment(Enchantment.ARROW_KNOCKBACK, 2);
         weapon.addUnsafeEnchantment(Enchantment.ARROW_DAMAGE, 10);
         weapon.addUnsafeEnchantment(Enchantment.ARROW_FIRE, 3);
+        minion.getEquipment().setItemInHand(weapon);
         Horse mount = new_loc.getWorld().spawn(new_loc, Horse.class);
         mount.setAdult();
         mount.setVariant(Horse.Variant.SKELETON_HORSE);
@@ -154,7 +196,7 @@ public class ZombieKing implements CustomBoss<ZombieKing> {
         temp_data.getEntities().put(mount.getUniqueId(), mount);
     }
 
-    public static void generateSoldiers(LivingEntity entity) {
+    private static void generateSoldiers(LivingEntity entity) {
         if (temp_data.getEntities().size() > 100) {
             return;
         }
@@ -205,7 +247,7 @@ public class ZombieKing implements CustomBoss<ZombieKing> {
         temp_data.getEntities().put(minion.getUniqueId(), minion);
     }
 
-    public static void generateBandits(LivingEntity entity) {
+    private static void generateBandits(LivingEntity entity) {
         if (temp_data.getEntities().size() > 100) {
             return;
         }
@@ -256,7 +298,7 @@ public class ZombieKing implements CustomBoss<ZombieKing> {
         temp_data.getEntities().put(minion.getUniqueId(), minion);
     }
 
-    public static void generateProtector(LivingEntity entity) {
+    private static void generateProtector(LivingEntity entity) {
         int count = BossUtils.getMinionCount(entity, 2);
         if (count < 0) {
             return;

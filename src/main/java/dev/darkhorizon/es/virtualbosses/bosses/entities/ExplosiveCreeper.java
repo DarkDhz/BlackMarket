@@ -12,9 +12,9 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
-import java.util.Random;
 
 public class ExplosiveCreeper implements CustomBoss<ExplosiveCreeper> {
 
@@ -25,6 +25,10 @@ public class ExplosiveCreeper implements CustomBoss<ExplosiveCreeper> {
     public static String name = "§a§lEl Explosiones";
     public static int health = 300;
 
+    /**
+     * Method to generate the boss
+     * @param loc Where the boss is generated
+     */
     public ExplosiveCreeper(Location loc) {
         if (!loc.getWorld().isChunkLoaded(loc.getChunk())) {
             loc.getWorld().loadChunk(loc.getChunk());
@@ -49,26 +53,37 @@ public class ExplosiveCreeper implements CustomBoss<ExplosiveCreeper> {
         Bukkit.getPluginManager().callEvent(new BossSpawn(entity));
     }
 
+    /**
+     * Method to manage Boss skills
+     * @param entity The boss
+     */
     public static void playSkill(LivingEntity entity) {
-        Random random = new Random();
-        if (random.nextInt(10) == 3) {
+        if (BossUtils.getChance(30)) {
             BossUtils.updateTarget((Creeper) entity);
         }
-        int result = random.nextInt(100);
-        if (result < 10) {
-            ExplosiveCreeper.spawnMinions(entity);
+        if (BossUtils.getChance(10)) {
+            ExplosiveCreeper.spawnZombies(entity);
+            return;
         }
-        if (result > 10 && result < 21) {
+        if (BossUtils.getChance(10)) {
             ExplosiveCreeper.spawnRandomTNT(entity);
+            return;
         }
-        if (result > 20 && result < 25) {
+        if (BossUtils.getChance(5)) {
             ExplosiveCreeper.useNuke(entity);
+            return;
         }
-        if (result > 25 && result < 36) {
+        if (BossUtils.getChance(10)) {
             ExplosiveCreeper.spawnProtectors(entity);
+            return;
         }
     }
 
+    /**
+     * Method to get Boss Helmet
+     * @return The item
+     */
+    @NotNull
     private ItemStack generateHelmet() {
         ItemStack item = new ItemStack(Material.DIAMOND_HELMET);
         item.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 7);
@@ -76,6 +91,11 @@ public class ExplosiveCreeper implements CustomBoss<ExplosiveCreeper> {
         return item;
     }
 
+    /**
+     * Method to get Boss ChestPlate
+     * @return The item
+     */
+    @NotNull
     private ItemStack generateChestPlate() {
         ItemStack item = new ItemStack(Material.DIAMOND_CHESTPLATE);
         item.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 7);
@@ -83,6 +103,11 @@ public class ExplosiveCreeper implements CustomBoss<ExplosiveCreeper> {
         return item;
     }
 
+    /**
+     * Method to get Boss Leggings
+     * @return The item
+     */
+    @NotNull
     private ItemStack generateLeggings() {
         ItemStack item = new ItemStack(Material.DIAMOND_LEGGINGS);
         item.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 7);
@@ -90,6 +115,11 @@ public class ExplosiveCreeper implements CustomBoss<ExplosiveCreeper> {
         return item;
     }
 
+    /**
+     * Method to get Boss Boots
+     * @return The item
+     */
+    @NotNull
     private ItemStack generateBoots() {
         ItemStack item = new ItemStack(Material.DIAMOND_BOOTS);
         item.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 7);
@@ -108,20 +138,6 @@ public class ExplosiveCreeper implements CustomBoss<ExplosiveCreeper> {
             tnt.setFuseTicks(100);
         }
 
-    }
-
-    public static void spawnMinions(LivingEntity entity) {
-        if (temp_data.getEntities().size() > 100) {
-            return;
-        }
-        int count = BossUtils.getMinionCount(entity, 16);
-        if (count < 0) {
-            return;
-        }
-        BossUtils.notifyPlayers(entity, "Minions Explosivos");
-        for (int i = 0; i < count; i++) {
-            generateEntity(entity.getLocation());
-        }
     }
 
     public static void useNuke(final LivingEntity entity) {
@@ -147,10 +163,42 @@ public class ExplosiveCreeper implements CustomBoss<ExplosiveCreeper> {
         if (temp_data.getEntities().size() > 100) {
             return;
         }
+        int count = BossUtils.getMinionCount(entity, 15);
+        if (count < 0) {
+            return;
+        }
         BossUtils.notifyPlayers(entity, "Protectores");
+        for (int i = 0; i < count; i++ ) {
+            generateProtectorEntity(entity.getLocation());
+        }
     }
 
-    public static void generateEntity(Location loc) {
+    private static void generateProtectorEntity(Location loc) {
+        Location new_loc = BossUtils.getValidLocation(loc, 10, 10);
+        Silverfish minion = new_loc.getWorld().spawn(new_loc, Silverfish.class);
+        minion.setCustomName("§7§lProtector");
+        minion.setMaxHealth(80);
+        minion.setHealth(80);
+        minion.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Integer.MAX_VALUE, 5), true);
+        minion.setMetadata("creeper_protector", new FixedMetadataValue(plugin, "minion"));
+        temp_data.getEntities().put(minion.getUniqueId(), minion);
+    }
+
+    public static void spawnZombies(LivingEntity entity) {
+        if (temp_data.getEntities().size() > 100) {
+            return;
+        }
+        int count = BossUtils.getMinionCount(entity, 16);
+        if (count < 0) {
+            return;
+        }
+        BossUtils.notifyPlayers(entity, "Minions Explosivos");
+        for (int i = 0; i < count; i++) {
+            generateZombieEntity(entity.getLocation());
+        }
+    }
+
+    private static void generateZombieEntity(Location loc) {
         Location new_loc = BossUtils.getValidLocation(loc, 10, 10);
         Zombie minion = new_loc.getWorld().spawn(new_loc, Zombie.class);
         minion.setBaby(true);
@@ -162,7 +210,6 @@ public class ExplosiveCreeper implements CustomBoss<ExplosiveCreeper> {
         Chicken chicken = new_loc.getWorld().spawn(new_loc, Chicken.class);
         chicken.setPassenger(minion);
         chicken.setMetadata("secundary", new FixedMetadataValue(plugin, "secundary"));
-
         chicken.setAdult();
         chicken.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 3), true);
         temp_data.getEntities().put(minion.getUniqueId(), minion);
@@ -170,7 +217,6 @@ public class ExplosiveCreeper implements CustomBoss<ExplosiveCreeper> {
     }
 
     public static void attack(Entity entity) {
-        Location loc = entity.getLocation();
         List<Player> near = BossUtils.getNearPlayers(entity, 2);
         for (Player target : near) {
             target.damage(30, entity);

@@ -7,26 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15c0c107-90d0-411c-a746-4657cf96a8ea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/api/json/ArrayWrapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/api/json/FancyMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/api/json/JsonRepresentedObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/api/json/JsonString.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/api/json/MessagePart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/api/json/TextualComponent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/bosses/entities/ArmoredGolem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/bosses/entities/ArmoredGolem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/bosses/entities/DamnedSkeleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/bosses/entities/DamnedSkeleton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/bosses/entities/ExplosiveCreeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/bosses/entities/ExplosiveCreeper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/bosses/entities/Invocator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/bosses/entities/Invocator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/bosses/entities/ZombieKing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/bosses/entities/ZombieKing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/commands/VirtualBoss.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/commands/VirtualBoss.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/items/drops/KingZombieDrop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/items/drops/KingZombieDrop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/listeners/entity/EntityDeath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/listeners/entity/EntityDeath.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/commands/BlackMarket.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/gui/GUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/gui/ItemListGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/gui/MainGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/items/ItemListItems.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dev/darkhorizon/es/black/items/MainItems.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/utils/BossUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/utils/BossUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +122,11 @@
       <workItem from="1587045614255" duration="6712000" />
       <workItem from="1587056707847" duration="9517000" />
       <workItem from="1587069915607" duration="3425000" />
-      <workItem from="1587074873482" duration="183000" />
+      <workItem from="1587074873482" duration="282000" />
+      <workItem from="1587116795129" duration="69000" />
+      <workItem from="1587125356356" duration="243000" />
+      <workItem from="1587126926869" duration="166000" />
+      <workItem from="1587129755204" duration="7645000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1586524733501</created>
@@ -219,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587068657921</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added JSON">
+      <created>1587075112921</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1587075112921</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,7 +236,8 @@
     <MESSAGE value="Added KingZombie Army :)" />
     <MESSAGE value="Commented BossUtils" />
     <MESSAGE value="Changed Path" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed Path" />
+    <MESSAGE value="Added JSON" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added JSON" />
   </component>
   <component name="WindowStateProjectService">
     <state x="480" y="139" key="#Inspections" timestamp="1587068688287">
@@ -280,11 +281,11 @@
     </state>
     <state x="584" y="208" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586864239608" />
     <state x="584" y="208" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1707.920@0.0.1707.920" timestamp="1586983030932" />
-    <state x="478" y="57" key="CommitChangelistDialog2" timestamp="1587068654321">
+    <state x="874" y="58" key="CommitChangelistDialog2" timestamp="1587075110186">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state x="478" y="57" key="CommitChangelistDialog2/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586878558595" />
-    <state x="478" y="57" key="CommitChangelistDialog2/0.0.1707.920@0.0.1707.920" timestamp="1587068654321" />
+    <state x="874" y="58" key="CommitChangelistDialog2/0.0.1707.920@0.0.1707.920" timestamp="1587075110186" />
     <state x="634" y="216" key="FileChooserDialogImpl" timestamp="1587063700840">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
@@ -294,11 +295,11 @@
     </state>
     <state x="334" y="35" key="SettingsEditor/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586881959505" />
     <state x="334" y="35" key="SettingsEditor/0.0.1707.920@0.0.1707.920" timestamp="1587035814867" />
-    <state x="446" y="194" key="Vcs.Push.Dialog.v2" timestamp="1587068664297">
+    <state x="446" y="194" key="Vcs.Push.Dialog.v2" timestamp="1587075146489">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state x="446" y="194" key="Vcs.Push.Dialog.v2/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586878563140" />
-    <state x="446" y="194" key="Vcs.Push.Dialog.v2/0.0.1707.920@0.0.1707.920" timestamp="1587068664297" />
+    <state x="446" y="194" key="Vcs.Push.Dialog.v2/0.0.1707.920@0.0.1707.920" timestamp="1587075146489" />
     <state x="550" y="285" key="com.intellij.ide.util.TipDialog" timestamp="1586870043456">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
@@ -311,5 +312,16 @@
       <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state x="596" y="80" key="refactoring.ChangeSignatureDialog/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586863880732" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/utils/BossUtils.java</url>
+          <line>314</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
