@@ -160,7 +160,7 @@ public class ExplosiveCreeper implements CustomBoss<ExplosiveCreeper> {
     }
 
     public static void spawnProtectors(LivingEntity entity) {
-        if (temp_data.getEntities().size() > 100) {
+        if (temp_data.getEntities().size() > Main.max_entities) {
             return;
         }
         int count = BossUtils.getMinionCount(entity, 15);
@@ -185,7 +185,7 @@ public class ExplosiveCreeper implements CustomBoss<ExplosiveCreeper> {
     }
 
     public static void spawnZombies(LivingEntity entity) {
-        if (temp_data.getEntities().size() > 100) {
+        if (temp_data.getEntities().size() > Main.max_entities) {
             return;
         }
         int count = BossUtils.getMinionCount(entity, 16);

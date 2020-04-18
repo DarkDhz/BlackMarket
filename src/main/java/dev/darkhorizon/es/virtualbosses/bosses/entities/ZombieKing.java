@@ -150,7 +150,7 @@ public class ZombieKing implements CustomBoss<ZombieKing> {
     }
 
     private static void generateArchers(LivingEntity entity) {
-        if (temp_data.getEntities().size() > 100) {
+        if (temp_data.getEntities().size() > Main.max_entities) {
             return;
         }
         int count = BossUtils.getMinionCount(entity, 10);
@@ -197,7 +197,7 @@ public class ZombieKing implements CustomBoss<ZombieKing> {
     }
 
     private static void generateSoldiers(LivingEntity entity) {
-        if (temp_data.getEntities().size() > 100) {
+        if (temp_data.getEntities().size() > Main.max_entities) {
             return;
         }
         int count = BossUtils.getMinionCount(entity, 8);
@@ -248,7 +248,7 @@ public class ZombieKing implements CustomBoss<ZombieKing> {
     }
 
     private static void generateBandits(LivingEntity entity) {
-        if (temp_data.getEntities().size() > 100) {
+        if (temp_data.getEntities().size() > Main.max_entities) {
             return;
         }
         int count = BossUtils.getMinionCount(entity, 10);
@@ -299,6 +299,9 @@ public class ZombieKing implements CustomBoss<ZombieKing> {
     }
 
     private static void generateProtector(LivingEntity entity) {
+        if (temp_data.getEntities().size() > Main.max_entities) {
+            return;
+        }
         int count = BossUtils.getMinionCount(entity, 2);
         if (count < 0) {
             return;

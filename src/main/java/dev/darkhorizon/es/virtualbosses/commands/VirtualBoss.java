@@ -166,36 +166,8 @@ public class VirtualBoss implements CommandExecutor {
                     launcher.sendMessage(lang.global_prefix + " Has creado un Boss " + ArmoredGolem.name + " §fen tu localizacion.");
                     return;
                 }
-                if (args[1].equalsIgnoreCase("test2") && launcher.hasPermission(perms.vb_spawn)) {
-                    System.out.println(BossUtils.getNextSpawn(Calendar.getInstance().getTime()));
-                }
                 if (args[1].equalsIgnoreCase("test") && launcher.hasPermission(perms.vb_spawn)) {
-                    /*Location loc = launcher.getLocation();
-                    ProtocolManager pm = ProtocolLibrary.getProtocolManager();
-                    PacketContainer packet = pm.createPacket(PacketType.Play.Server.MULTI_BLOCK_CHANGE);
-                    Chunk chunk = Bukkit.getWorld("world").getChunkAt(0, 0);
-                    ChunkCoordIntPair chunkcoords = new ChunkCoordIntPair(chunk.getX(),
-                            chunk.getZ());
-                    System.out.println(WrappedBlockData.createData(Material.GOLD_BLOCK).getType());
-                    MultiBlockChangeInfo[] change = new MultiBlockChangeInfo[2];
-                    change[0] = new MultiBlockChangeInfo(new Location(loc.getWorld(), loc.getBlockX(), loc.getBlockY()+5, loc.getBlockZ()),
-                            WrappedBlockData.createData(Material.GOLD_BLOCK));
-                    change[1] = new MultiBlockChangeInfo(new Location(loc.getWorld(), loc.getBlockX(), loc.getBlockY()+6, loc.getBlockZ()),
-                            WrappedBlockData.createData(Material.GOLD_BLOCK));
-
-
-                    packet.getChunkCoordIntPairs().write(0, chunkcoords);
-                    packet.getMultiBlockChangeInfoArrays().write(0, change);
-
-
-                    try {
-                        pm.sendServerPacket(launcher, packet);
-                    } catch (InvocationTargetException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                    }
-                    launcher.sendMessage("Has realizado el test");*/
-                    return;
+                    Invocator.potionSkill(launcher);
                 }
             }
         }

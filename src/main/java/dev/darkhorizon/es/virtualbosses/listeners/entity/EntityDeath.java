@@ -89,6 +89,17 @@ public class EntityDeath implements Listener {
             event.getDrops().clear();
             return;
         }
+        if (entity.hasMetadata("invocator_guardians")) {
+            temp_data.getEntities().remove(entity.getUniqueId());
+            event.getDrops().clear();
+            return;
+        }
+        if (entity.hasMetadata("invocator_wither")) {
+            temp_data.getEntities().remove(entity.getUniqueId());
+            event.getDrops().clear();
+            return;
+        }
+
     }
 
     /**

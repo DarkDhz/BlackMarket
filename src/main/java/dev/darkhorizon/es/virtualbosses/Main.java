@@ -26,6 +26,8 @@ import java.io.File;
 public class Main extends JavaPlugin {
 
     private static DataHandler dataHandler;
+    public static int max_entities = 100;
+
 
     @Override
     public void onEnable() {

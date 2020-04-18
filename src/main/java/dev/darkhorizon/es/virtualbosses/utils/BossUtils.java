@@ -261,7 +261,7 @@ public class BossUtils {
                     return;
                 }
                 sendMessage(entity);
-                //TODO;
+                ArmoredGolem.playSkill(entity);
             }
         }.runTaskTimer(plugin, 0, 3*20);
     }
@@ -281,7 +281,7 @@ public class BossUtils {
                     return;
                 }
                 sendMessage(entity);
-                //TODO;
+                DamnedSkeleton.playSkill(entity);
             }
         }.runTaskTimer(plugin, 0, 3*20);
     }
@@ -528,7 +528,7 @@ public class BossUtils {
             damager.remove();
 
             damager.getWorld().playEffect(damager.getLocation(), Effect.EXPLOSION, null);
-            damager.getWorld().playSound(damager.getLocation(), Sound.EXPLODE, 1, 0);
+            damager.getWorld().playSound(damager.getLocation(), Sound.EXPLODE, 10, 1);
             target.setVelocity((target.getLocation().getDirection().multiply(-1).add(new Vector(0, 0.5, 0))));
             Random random = new Random();
 
@@ -538,7 +538,7 @@ public class BossUtils {
         }
 
         if (damager.hasMetadata("creeper_protector") && target instanceof Player) {
-            target.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 10, 1), true);
+            target.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 10*20, 1), true);
             return false;
         }
         return false;

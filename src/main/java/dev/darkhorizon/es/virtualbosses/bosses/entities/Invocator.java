@@ -8,6 +8,7 @@ import dev.darkhorizon.es.virtualbosses.utils.BossUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.*;
 import org.bukkit.inventory.ItemStack;
@@ -16,6 +17,7 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.List;
 import java.util.Random;
 
 public class Invocator implements CustomBoss<Invocator> {
@@ -124,6 +126,10 @@ public class Invocator implements CustomBoss<Invocator> {
         if (BossUtils.getChance(30)) {
             BossUtils.updateTarget((Witch) entity);
         }
+        if (BossUtils.getChance(10)) {
+            potionSkill(entity);
+            return;
+        }
         if (BossUtils.getChance(8)) {
             generateBlazes(entity);
             return;
@@ -142,12 +148,25 @@ public class Invocator implements CustomBoss<Invocator> {
         }
     }
 
+    public static void potionSkill(Entity entity) {
+        BossUtils.notifyPlayers(entity, "Conjunto de Pociones");
+        List<Player> players = BossUtils.getNearPlayers(entity, 20);
+        for (Player p : players) {
+            p.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 10*20, 2), false);
+            p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 20*20, 2), false);
+            p.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 10*20, 2), true);
+            p.addPotionEffect(new PotionEffect(PotionEffectType.HUNGER, 30*20, 2), true);
+            p.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, 20*20, 2), true);
+            p.playSound(p.getLocation(), Sound.SPLASH, 10, 1);
+        }
+    }
+
     /**
      * Method to generate blazes
      * @param entity Boss entity
      */
     private static void generateBlazes(Entity entity) {
-        if (temp_data.getEntities().size() > 100) {
+        if (temp_data.getEntities().size() > Main.max_entities) {
             return;
         }
         int count = BossUtils.getMinionCount(entity, 8);
@@ -167,28 +186,11 @@ public class Invocator implements CustomBoss<Invocator> {
     private static void generateBlazesEntity(Location loc) {
         Location new_loc = BossUtils.getValidLocation(loc, 5, 5);
         Blaze minion = new_loc.getWorld().spawn(new_loc, Blaze.class);
-        minion.setMaxHealth(80);
-        minion.setHealth(80);
+        minion.setMaxHealth(120);
+        minion.setHealth(120);
         minion.setCustomName("§a§lBlaze Asesino");
         minion.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Integer.MAX_VALUE, 5), true);
-        minion.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, Integer.MAX_VALUE, 2), true);
         minion.setMetadata("invocator_blazes", new FixedMetadataValue(plugin, "minion"));
-        ItemStack helmet = new ItemStack(Material.DIAMOND_HELMET);
-        helmet.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 5);
-        helmet.addUnsafeEnchantment(Enchantment.DURABILITY, 7);
-        minion.getEquipment().setHelmet(helmet);
-        ItemStack chestplate = new ItemStack(Material.GOLD_CHESTPLATE);
-        chestplate.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 7);
-        chestplate.addUnsafeEnchantment(Enchantment.DURABILITY, 7);
-        minion.getEquipment().setChestplate(chestplate);
-        ItemStack leggings = new ItemStack(Material.DIAMOND_LEGGINGS);
-        leggings.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 5);
-        leggings.addUnsafeEnchantment(Enchantment.DURABILITY, 7);
-        minion.getEquipment().setLeggings(leggings);
-        ItemStack boots = new ItemStack(Material.DIAMOND_BOOTS);
-        boots.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 5);
-        boots.addUnsafeEnchantment(Enchantment.DURABILITY, 7);
-        minion.getEquipment().setBoots(boots);
         temp_data.getEntities().put(minion.getUniqueId(), minion);
     }
 
@@ -196,12 +198,76 @@ public class Invocator implements CustomBoss<Invocator> {
 
     }
 
+    /**
+     * Method to generate guardians
+     * @param entity Boss entity
+     */
     private static void generateGuardians(Entity entity) {
+        if (temp_data.getEntities().size() > Main.max_entities) {
+            return;
+        }
+        int count = BossUtils.getMinionCount(entity, 8);
+        if (count < 0) {
+            return;
+        }
+        BossUtils.notifyPlayers(entity, "Invocar Guardianes");
+        for (int i = 0; i < count; i++) {
+            generateGuardiansEntity(entity.getLocation());
+        }
+    }
+
+    /**
+     * Method to spawn Guardian Minion
+     * @param loc Initial Location
+     */
+    private static void generateGuardiansEntity(Location loc) {
+        Location new_loc = BossUtils.getValidLocation(loc, 5, 5);
+        Guardian minion = new_loc.getWorld().spawn(new_loc, Guardian.class);
+        minion.setMaxHealth(120);
+        minion.setHealth(120);
+        minion.setCustomName("§a§lGuardian del mar profundo");
+        minion.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Integer.MAX_VALUE, 5), true);
+        minion.setMetadata("invocator_guardians", new FixedMetadataValue(plugin, "minion"));
+        temp_data.getEntities().put(minion.getUniqueId(), minion);
 
     }
 
+    /**
+     * Method to generate wither
+     * @param entity Boss entity
+     */
     private static void generateWithers(Entity entity) {
+        if (temp_data.getEntities().size() > Main.max_entities) {
+            return;
+        }
+        int count = BossUtils.getMinionCount(entity, 8);
+        if (count < 0) {
+            return;
+        }
+        BossUtils.notifyPlayers(entity, "Invocar Esqueletos Malditos");
+        for (int i = 0; i < count; i++) {
+            generateWithersEntity(entity.getLocation());
+        }
+    }
 
+    /**
+     * Method to spawn Wither Minion
+     * @param loc Initial Location
+     */
+    private static void generateWithersEntity(Location loc ) {
+        Location new_loc = BossUtils.getValidLocation(loc, 5, 5);
+        Skeleton minion = new_loc.getWorld().spawn(new_loc, Skeleton.class);
+        minion.setMaxHealth(150);
+        minion.setHealth(150);
+        minion.setSkeletonType(Skeleton.SkeletonType.WITHER);
+        ItemStack weapon = new ItemStack(Material.DIAMOND_SWORD);
+        weapon.addUnsafeEnchantment(Enchantment.KNOCKBACK, 2);
+        minion.getEquipment().setItemInHand(weapon);
+        minion.setCustomName("§a§lEsqueleto Maldito");
+        minion.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Integer.MAX_VALUE, 5), true);
+        minion.setMetadata("invocator_wither", new FixedMetadataValue(plugin, "minion"));
+        minion.getEquipment().setHelmet(new ItemStack(Material.LEATHER_HELMET));
+        temp_data.getEntities().put(minion.getUniqueId(), minion);
     }
 
 }
