@@ -49,6 +49,7 @@ public class BossItems {
         lore.add("§3");
         lore.add("§fDrops: ");
         lore.add("§6- §fUndone");
+        lore.add("§6- §fRare Key §8(TOP 3)");
         meta.setLore(lore);
         meta.addEnchant(Enchantment.DURABILITY, 0, true);
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
@@ -68,10 +69,13 @@ public class BossItems {
         lore.add("§6- §fArqueros §8(Esqueletos a caballo)");
         lore.add("§6- §fSoldados §8(Zombis armados)");
         lore.add("§6- §fBandidos §8(MiniZombies Asesinos)");
-        lore.add("§6- §fSuperSoldado §8(La mano derecha del rey)");
+        lore.add("§6- §fSuperSoldado §8(Guarda Espaldas del rey)");
         lore.add("§3");
         lore.add("§fDrops: ");
-        lore.add("§6- §fCorona del Rey (TOP 1)");
+        lore.add("§6- §fCorona del Rey §8(TOP 1)");
+        lore.add("§6- §fEspada del Rey §8(Probabilidad)");
+        lore.add("§6- §fArmadura del Rey §8(Probabilidad)");
+        lore.add("§6- §fRare Key §8(TOP 3)");
         meta.setLore(lore);
         meta.addEnchant(Enchantment.DURABILITY, 0, true);
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
@@ -92,11 +96,13 @@ public class BossItems {
         lore.add("§6- §fBlazes §8(Invoca blazes)");
         lore.add("§6- §fGuardianes §8(Invoca guardianes)");
         lore.add("§6- §fArañas de Cueva §8(Invoca arañas de cueva)");
-        lore.add("§6- §fPigman §8(Invoca zombies pigman)");
+        lore.add("§6- §fWither§8(Invoca esqueletos wither)");
         lore.add("§6- §fCuración §8(Recuper 5% de la vida)");
+        lore.add("§6- §fConjunto de Pociones §8(Efecto demoledor)");
         lore.add("§3");
         lore.add("§fDrops: ");
         lore.add("§6- §fUndone");
+        lore.add("§6- §fRare Key §8(TOP 3)");
         meta.setLore(lore);
         meta.addEnchant(Enchantment.DURABILITY, 0, true);
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
@@ -118,6 +124,7 @@ public class BossItems {
         lore.add("§3");
         lore.add("§fDrops: ");
         lore.add("§6- §fUndone");
+        lore.add("§6- §fRare Key §8(TOP 3)");
         meta.setLore(lore);
         meta.addEnchant(Enchantment.DURABILITY, 0, true);
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
@@ -140,6 +147,7 @@ public class BossItems {
         lore.add("§3");
         lore.add("§fDrops: ");
         lore.add("§6- §fUndone");
+        lore.add("§6- §fRare Key §8(TOP 3)");
         meta.setLore(lore);
         meta.addEnchant(Enchantment.DURABILITY, 0, true);
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);

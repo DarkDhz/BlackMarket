@@ -48,11 +48,24 @@
             <systemPath>${basedir}/lib/ProtocolLib.jar</systemPath>
         </dependency>
         <dependency>
+            <artifactId>..</artifactId>
+            <groupId>holographic-displays</groupId>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/HolographicDisplays.jar</systemPath>
+        </dependency>
+        <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations-java5</artifactId>
             <version>RELEASE</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>net.milkbowl.vault</groupId>
+            <artifactId>VaultAPI</artifactId>
+            <version>1.7</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 
 </project>

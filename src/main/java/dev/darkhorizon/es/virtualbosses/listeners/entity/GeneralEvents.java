@@ -4,6 +4,10 @@ import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.*;
+import org.bukkit.event.inventory.BrewEvent;
+import org.bukkit.event.player.PlayerItemConsumeEvent;
+import org.bukkit.potion.Potion;
+import org.bukkit.potion.PotionEffect;
 import org.jetbrains.annotations.NotNull;
 
 
@@ -34,6 +38,15 @@ public class GeneralEvents implements Listener {
         Entity entity = event.getEntity();
         if (entity.hasMetadata("CustomCreeper")) {
             event.setCancelled(true);
+        }
+    }
+
+    @EventHandler
+    public void onRegain(EntityRegainHealthEvent event) {
+        if (event.getEntity().hasMetadata("Invocator")) {
+            if (event.getRegainReason().equals(EntityRegainHealthEvent.RegainReason.MAGIC)) {
+                event.setCancelled(true);
+            }
         }
     }
 

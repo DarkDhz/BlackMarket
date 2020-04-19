@@ -40,7 +40,7 @@ public class Invocator implements CustomBoss<Invocator> {
         Witch entity = loc.getWorld().spawn(loc, Witch.class);
         entity.setCustomName(name);
         entity.setCustomNameVisible(true);
-        entity.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, Integer.MAX_VALUE, 5), true);
+        entity.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, Integer.MAX_VALUE, 2), true);
         entity.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Integer.MAX_VALUE, 5), true);
         entity.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 4), true);
         entity.setMetadata("Invocator", new FixedMetadataValue(plugin, "invocator"));
@@ -130,6 +130,10 @@ public class Invocator implements CustomBoss<Invocator> {
             potionSkill(entity);
             return;
         }
+        if (BossUtils.getChance(5)) {
+            potionSkill(entity);
+            return;
+        }
         if (BossUtils.getChance(8)) {
             generateBlazes(entity);
             return;
@@ -148,9 +152,29 @@ public class Invocator implements CustomBoss<Invocator> {
         }
     }
 
-    public static void potionSkill(Entity entity) {
-        BossUtils.notifyPlayers(entity, "Conjunto de Pociones");
+
+    /**
+     * Skill that regenerate witch life
+     * @param entity
+     */
+    private static void regenerate(LivingEntity entity) {
+        if ((entity.getHealth()*0.05) >= health) {
+            return;
+        }
+        BossUtils.notifyPlayers(entity, "Regeneración");
+        entity.setHealth((entity.getHealth()*0.05));
+    }
+
+    /**
+     * Skill that cause negative effects to players
+     * @param entity Boss entity
+     */
+    private static void potionSkill(Entity entity) {
         List<Player> players = BossUtils.getNearPlayers(entity, 20);
+        if (players.size() == 0) {
+            return;
+        }
+        BossUtils.notifyPlayers(entity, "Conjunto de Pociones");
         for (Player p : players) {
             p.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 10*20, 2), false);
             p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 20*20, 2), false);
@@ -267,6 +291,9 @@ public class Invocator implements CustomBoss<Invocator> {
         minion.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Integer.MAX_VALUE, 5), true);
         minion.setMetadata("invocator_wither", new FixedMetadataValue(plugin, "minion"));
         minion.getEquipment().setHelmet(new ItemStack(Material.LEATHER_HELMET));
+        minion.getEquipment().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
+        minion.getEquipment().setLeggings(new ItemStack(Material.LEATHER_LEGGINGS));
+        minion.getEquipment().setBoots(new ItemStack(Material.LEATHER_BOOTS));
         temp_data.getEntities().put(minion.getUniqueId(), minion);
     }
 

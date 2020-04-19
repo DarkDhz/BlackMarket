@@ -8,7 +8,7 @@ import dev.darkhorizon.es.virtualbosses.Main;
 import dev.darkhorizon.es.virtualbosses.bosses.CustomBoss;
 import dev.darkhorizon.es.virtualbosses.bosses.entities.*;
 import dev.darkhorizon.es.virtualbosses.config.FileManager;
-import dev.darkhorizon.es.virtualbosses.items.drops.KingZombieDrop;
+import dev.darkhorizon.es.virtualbosses.bosses.loot.KingZombieDrop;
 import dev.darkhorizon.es.virtualbosses.listeners.boss.BossDeath;
 import org.bukkit.*;
 import org.bukkit.block.Block;
@@ -137,7 +137,7 @@ public class BossUtils {
     /**
      * Method to get a probability result
      * @param probability Probability of success
-     * @return
+     * @return If asserted or not
      */
     public static boolean getChance(int probability) {
         return new Random().nextInt(100) < probability;
@@ -531,9 +531,7 @@ public class BossUtils {
             damager.getWorld().playSound(damager.getLocation(), Sound.EXPLODE, 10, 1);
             target.setVelocity((target.getLocation().getDirection().multiply(-1).add(new Vector(0, 0.5, 0))));
             Random random = new Random();
-
             target.damage(random.nextInt(15) + 10);
-
             return false;
         }
 

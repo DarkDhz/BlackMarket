@@ -14,10 +14,14 @@ import dev.darkhorizon.es.virtualbosses.listeners.PlayerEvents;
 import dev.darkhorizon.es.virtualbosses.listeners.entity.EntityDamageByEntity;
 import dev.darkhorizon.es.virtualbosses.listeners.entity.EntitySpawn;
 import dev.darkhorizon.es.virtualbosses.utils.BossUtils;
+import dev.darkhorizon.es.virtualbosses.utils.UpdateHologram;
+import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
+import org.bukkit.craftbukkit.libs.jline.internal.Log;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
+import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
@@ -26,15 +30,26 @@ import java.io.File;
 public class Main extends JavaPlugin {
 
     private static DataHandler dataHandler;
+    
     public static int max_entities = 100;
 
+    private Economy econ = null;
 
     @Override
     public void onEnable() {
         super.onEnable();
         if (!this.createFolder()) {
             this.getPluginLoader().disablePlugin(this);
-            System.err.println("Can't create virtualBosses database file!");
+            System.err.println("[VirtualBosses] Can't create virtualBosses database file!");
+            return;
+        }
+        if (getServer().getPluginManager().getPlugin("HolographicDisplays") != null) {
+            System.out.println("[VirtualBosses] Detected HolographicDisplay, enabling placeholders...");
+            UpdateHologram.initPalaceholders();
+        }
+        if (!setupEconomy() ) {
+            System.err.println("[VirtualBosses] No economy plugin installed");
+            getServer().getPluginManager().disablePlugin(this);
             return;
         }
         FileManager.initFiles();
@@ -74,6 +89,19 @@ public class Main extends JavaPlugin {
     private void initCommands() {
         getCommand("blackmarket").setExecutor(new BlackMarket());
         getCommand("virtualboss").setExecutor(new VirtualBoss());
+    }
+
+    public Economy getEconomy() {
+        return econ;
+    }
+
+    private boolean setupEconomy() {
+        RegisteredServiceProvider<Economy> economyProvider = getServer().getServicesManager().getRegistration(net.milkbowl.vault.economy.Economy.class);
+        if (economyProvider != null) {
+            econ = economyProvider.getProvider();
+        }
+
+        return (econ != null);
     }
 
     private void initThread() {
@@ -119,7 +147,9 @@ public class Main extends JavaPlugin {
 
     @Override
     public void onDisable() {
+        System.out.println("[VirtualBosses] Clearing entities...");
         this.clearEntities();
+        System.out.println("[VirtualBosses] All entities cleared!");
     }
 
     private void clearEntities() {

@@ -1,7 +1,8 @@
 name: VirtualBosses
 main: dev.darkhorizon.es.virtualbosses.Main
 version: "1.0"
-depend: [ProtocolLib]
+depend: [ProtocolLib, Vault]
+softdepend: [HolographicDisplays]
 commands:
   blackmarket:
     usage: /<command>

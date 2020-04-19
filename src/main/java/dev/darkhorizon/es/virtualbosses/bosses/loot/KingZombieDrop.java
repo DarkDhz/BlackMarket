@@ -1,4 +1,4 @@
-package dev.darkhorizon.es.virtualbosses.items.drops;
+package dev.darkhorizon.es.virtualbosses.bosses.loot;
 
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;

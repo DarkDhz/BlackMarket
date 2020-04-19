@@ -174,7 +174,7 @@ public class ExplosiveCreeper implements CustomBoss<ExplosiveCreeper> {
     }
 
     private static void generateProtectorEntity(Location loc) {
-        Location new_loc = BossUtils.getValidLocation(loc, 10, 10);
+        Location new_loc = BossUtils.getValidLocation(loc, 5, 5);
         Silverfish minion = new_loc.getWorld().spawn(new_loc, Silverfish.class);
         minion.setCustomName("§7§lProtector");
         minion.setMaxHealth(80);
@@ -199,7 +199,7 @@ public class ExplosiveCreeper implements CustomBoss<ExplosiveCreeper> {
     }
 
     private static void generateZombieEntity(Location loc) {
-        Location new_loc = BossUtils.getValidLocation(loc, 10, 10);
+        Location new_loc = BossUtils.getValidLocation(loc, 8, 8);
         Zombie minion = new_loc.getWorld().spawn(new_loc, Zombie.class);
         minion.setBaby(true);
         minion.setCustomName("§a§lSuicida");

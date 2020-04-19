@@ -16,6 +16,7 @@ import dev.darkhorizon.es.virtualbosses.config.Lang;
 import dev.darkhorizon.es.virtualbosses.config.Perms;
 import dev.darkhorizon.es.virtualbosses.gui.BossList;
 import dev.darkhorizon.es.virtualbosses.gui.GUI;
+import dev.darkhorizon.es.virtualbosses.items.GiveItems;
 import dev.darkhorizon.es.virtualbosses.utils.BossUtils;
 import org.bukkit.*;
 import org.bukkit.command.Command;
@@ -41,7 +42,7 @@ public class VirtualBoss implements CommandExecutor {
         if (commandSender instanceof Player) {
             this.manageCommand((Player) commandSender, strings);
         } else {
-            commandSender.sendMessage("¡Este commando solo se puede ejecutar via usuario!");
+            commandSender.sendMessage(lang.global_only_players);
         }
         return true;
     }
@@ -138,12 +139,14 @@ public class VirtualBoss implements CommandExecutor {
                 launcher.sendMessage("§3");
                 return;
             }
+            new FancyMessage(lang.global_prefix + " Comando invalido, clic para ver los disponibles").command("/boss")
+                    .tooltip("§6Clic para ver la ayuda de bosses").send(launcher);
 
         } else {
             if (args[0].equals("spawn")) {
                 if (args[1].equalsIgnoreCase("creeper") && launcher.hasPermission(perms.vb_spawn)) {
                     CustomBoss<ExplosiveCreeper> boss = new ExplosiveCreeper(launcher.getLocation());
-                    launcher.sendMessage(lang.global_prefix + " Has creado un Boss" + ExplosiveCreeper.name + " §fen tu localizacion.");
+                    launcher.sendMessage(lang.global_prefix + " Has creado un Boss " + ExplosiveCreeper.name + " §fen tu localizacion.");
                     return;
                 }
                 if (args[1].equalsIgnoreCase("reyzombie") && launcher.hasPermission(perms.vb_spawn)) {
@@ -167,9 +170,15 @@ public class VirtualBoss implements CommandExecutor {
                     return;
                 }
                 if (args[1].equalsIgnoreCase("test") && launcher.hasPermission(perms.vb_spawn)) {
-                    Invocator.potionSkill(launcher);
+                    launcher.getInventory().addItem(GiveItems.getInstance().getSuperPocion());
+                    return;
                 }
+                new FancyMessage(lang.global_prefix + " Mob invalido, clic para ver los disponibles.").command("/boss spawn")
+                        .tooltip("§6Clic para ver la ayuda de boss spawn").send(launcher);
+                return;
             }
+            new FancyMessage(lang.global_prefix + " Comando invalido, clic para ver los disponibles.").command("/boss")
+                    .tooltip("§6Clic para ver la ayuda de bosses").send(launcher);
         }
     }
 }
