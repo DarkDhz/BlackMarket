@@ -4,13 +4,14 @@ import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 public abstract class PersonalGUI extends GUI {
 
     protected final UUID playerUUID;
 
-    public static HashMap<UUID, PersonalGUI> viewers = new HashMap<>();
+    public static Map<UUID, PersonalGUI> viewers = new HashMap<>();
 
     protected PersonalGUI(int size, String title, @NotNull Player target) {
         super(size, title);
