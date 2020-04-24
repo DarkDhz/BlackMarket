@@ -4,15 +4,12 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
 
 public abstract class GUI {
 
     protected Inventory inv = null;
-    protected int size = 0;
-    protected String title = null;
+    protected int size;
+    protected String title;
 
     protected GUI(int size, String title) {
         this.size = size;
@@ -46,8 +43,6 @@ public abstract class GUI {
     public abstract boolean manageClick(Player target, ItemStack clicked, String title, int slot);
 
     public abstract void manageClose(Player target, String title);
-
-
 
 }
 
