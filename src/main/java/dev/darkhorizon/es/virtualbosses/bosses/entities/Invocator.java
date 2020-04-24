@@ -22,7 +22,7 @@ import java.util.Random;
 
 public class Invocator implements CustomBoss<Invocator> {
 
-    private static final Main plugin = Main.getPlugin(Main.class);
+    private static final Main plugin = Main.getInstance();
     private static final TempData temp_data = TempData.getInstance();
 
 

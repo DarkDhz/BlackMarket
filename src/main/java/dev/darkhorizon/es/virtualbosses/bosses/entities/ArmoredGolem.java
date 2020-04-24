@@ -21,12 +21,12 @@ import java.util.Random;
 
 public class ArmoredGolem implements CustomBoss<ArmoredGolem> {
 
-    private static final Main plugin = Main.getPlugin(Main.class);
+    private static final Main plugin = Main.getInstance();
     private static final TempData temp_data = TempData.getInstance();
 
 
     public static String name = "§7§lGolem Blindado";
-    public static int health = 600;
+    public static int health = 5000;
 
     /**
      * Method to generate the boss
@@ -39,7 +39,6 @@ public class ArmoredGolem implements CustomBoss<ArmoredGolem> {
         IronGolem entity = loc.getWorld().spawn(loc, IronGolem.class);
         entity.setCustomName(name);
         entity.setCustomNameVisible(true);
-        entity.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, Integer.MAX_VALUE, 5), true);
         entity.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Integer.MAX_VALUE, 10), true);
         entity.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 4), true);
         entity.setMetadata("ArmoredGolem", new FixedMetadataValue(plugin, "armored_golem"));

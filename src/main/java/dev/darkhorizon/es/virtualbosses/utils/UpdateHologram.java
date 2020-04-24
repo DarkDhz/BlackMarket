@@ -2,7 +2,6 @@ package dev.darkhorizon.es.virtualbosses.utils;
 
 import com.gmail.filoghost.holographicdisplays.api.HologramsAPI;
 import com.gmail.filoghost.holographicdisplays.api.placeholder.PlaceholderReplacer;
-import com.gmail.filoghost.holographicdisplays.placeholder.Placeholder;
 import dev.darkhorizon.es.virtualbosses.Main;
 
 import java.util.Calendar;

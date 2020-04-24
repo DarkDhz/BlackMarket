@@ -2,13 +2,12 @@ package dev.darkhorizon.es.virtualbosses.commands;
 
 import dev.darkhorizon.es.virtualbosses.config.Lang;
 import dev.darkhorizon.es.virtualbosses.gui.GUI;
-import dev.darkhorizon.es.virtualbosses.gui.MainGUI;
+import dev.darkhorizon.es.virtualbosses.gui.global.MainGUI;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.*;
-import sun.launcher.resources.launcher;
 
 public class BlackMarket implements CommandExecutor {
 
@@ -33,8 +32,8 @@ public class BlackMarket implements CommandExecutor {
             if (target == null) {
                 return;
             }
-            GUI gui = new MainGUI();
-            gui.generateInventory(target);
+            GUI gui = MainGUI.getInstance();
+            gui.open(target);
         }
     }
 }

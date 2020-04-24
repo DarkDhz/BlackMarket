@@ -1,12 +1,5 @@
 package dev.darkhorizon.es.virtualbosses.commands;
 
-import com.comphenix.protocol.PacketType;
-import com.comphenix.protocol.ProtocolLibrary;
-import com.comphenix.protocol.ProtocolManager;
-import com.comphenix.protocol.events.PacketContainer;
-import com.comphenix.protocol.wrappers.ChunkCoordIntPair;
-import com.comphenix.protocol.wrappers.MultiBlockChangeInfo;
-import com.comphenix.protocol.wrappers.WrappedBlockData;
 import dev.darkhorizon.es.virtualbosses.api.json.FancyMessage;
 import dev.darkhorizon.es.virtualbosses.bosses.entities.*;
 import dev.darkhorizon.es.virtualbosses.data.temp.TempData;
@@ -14,18 +7,16 @@ import dev.darkhorizon.es.virtualbosses.Main;
 import dev.darkhorizon.es.virtualbosses.bosses.CustomBoss;
 import dev.darkhorizon.es.virtualbosses.config.Lang;
 import dev.darkhorizon.es.virtualbosses.config.Perms;
-import dev.darkhorizon.es.virtualbosses.gui.BossList;
+import dev.darkhorizon.es.virtualbosses.gui.global.BossList;
 import dev.darkhorizon.es.virtualbosses.gui.GUI;
 import dev.darkhorizon.es.virtualbosses.items.GiveItems;
 import dev.darkhorizon.es.virtualbosses.utils.BossUtils;
-import org.bukkit.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -99,8 +90,9 @@ public class VirtualBoss implements CommandExecutor {
             }
             if (args[0].equalsIgnoreCase("list") ||
                     args[0].equalsIgnoreCase("tiempo")) {
-                GUI gui = new BossList();
-                gui.generateInventory(launcher);
+                GUI gui = BossList.getInstance();
+                gui.open(launcher);
+
                 return;
             }
             if (args[0].equalsIgnoreCase("killall") && launcher.hasPermission(perms.vb_kill)) {

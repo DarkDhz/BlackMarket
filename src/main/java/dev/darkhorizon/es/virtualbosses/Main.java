@@ -17,7 +17,6 @@ import dev.darkhorizon.es.virtualbosses.utils.BossUtils;
 import dev.darkhorizon.es.virtualbosses.utils.UpdateHologram;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
-import org.bukkit.craftbukkit.libs.jline.internal.Log;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
@@ -29,15 +28,22 @@ import java.io.File;
 
 public class Main extends JavaPlugin {
 
+    private static Main INSTANCE = null;
+
     private static DataHandler dataHandler;
     
     public static int max_entities = 100;
 
     private Economy econ = null;
 
+    public static Main getInstance() {
+        return INSTANCE;
+    }
+
     @Override
     public void onEnable() {
         super.onEnable();
+        INSTANCE = this;
         if (!this.createFolder()) {
             this.getPluginLoader().disablePlugin(this);
             System.err.println("[VirtualBosses] Can't create virtualBosses database file!");

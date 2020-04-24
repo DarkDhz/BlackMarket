@@ -21,7 +21,7 @@ import java.util.Random;
 
 public class DamnedSkeleton implements CustomBoss<DamnedSkeleton> {
 
-    private static final Main plugin = Main.getPlugin(Main.class);
+    private static final Main plugin = Main.getInstance();
     private static final TempData temp_data = TempData.getInstance();
 
     public static String name = "§f§lEsqueleto Maldito";
@@ -39,8 +39,8 @@ public class DamnedSkeleton implements CustomBoss<DamnedSkeleton> {
         entity.setCustomName(name);
         entity.setCustomNameVisible(true);
         entity.setSkeletonType(Skeleton.SkeletonType.WITHER);
-        entity.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, Integer.MAX_VALUE, 5), true);
-        entity.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Integer.MAX_VALUE, 5), true);
+        entity.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, Integer.MAX_VALUE, 2), true);
+        entity.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Integer.MAX_VALUE, 8), true);
         entity.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 4), true);
         entity.setMetadata("DamnedSkeleton", new FixedMetadataValue(plugin, "damned_skeleton"));
         entity.getEquipment().setHelmet(generateHelmet());

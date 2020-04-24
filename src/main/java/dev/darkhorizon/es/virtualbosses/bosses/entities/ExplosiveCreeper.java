@@ -18,7 +18,7 @@ import java.util.List;
 
 public class ExplosiveCreeper implements CustomBoss<ExplosiveCreeper> {
 
-    private static final Main plugin = Main.getPlugin(Main.class);
+    private static final Main plugin = Main.getInstance();
     private static final TempData temp_data = TempData.getInstance();
 
 

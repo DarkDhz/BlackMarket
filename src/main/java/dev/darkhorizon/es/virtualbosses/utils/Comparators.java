@@ -41,4 +41,8 @@ public class Comparators {
         }
         return item.getAmount() >= quantity;
     }
+
+    public static boolean compareTitle(String original, String toCompare) {
+        return original.equals(toCompare);
+    }
 }

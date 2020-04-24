@@ -7,34 +7,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15c0c107-90d0-411c-a746-4657cf96a8ea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/HolographicDisplays.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/gui/PerCraft/EspacialBoots.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/gui/PerCraft/EspacialChestPlate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/gui/PerCraft/EspacialHelmet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/gui/PerCraft/EspacialLeggings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/gui/PerCraft/MataDioses.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/gui/PerCraft/SuperPocion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/utils/UpdateHologram.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/gui/GUIUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/gui/PersonalGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/gui/global/BossList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/gui/global/ItemListGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/gui/global/MainGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/bosses/entities/ArmoredGolem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/bosses/entities/ArmoredGolem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/bosses/entities/DamnedSkeleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/bosses/entities/DamnedSkeleton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/bosses/entities/ExplosiveCreeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/bosses/entities/ExplosiveCreeper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/bosses/entities/Invocator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/bosses/entities/Invocator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/bosses/entities/ZombieKing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/bosses/entities/ZombieKing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/commands/BlackMarket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/commands/BlackMarket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/commands/VirtualBoss.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/commands/VirtualBoss.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/gui/ItemListGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/gui/ItemListGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/items/BossItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/items/BossItems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/items/GiveItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/items/GiveItems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/items/ItemListItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/items/ItemListItems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/items/MainItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/items/MainItems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/items/drops/KingZombieDrop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/bosses/loot/KingZombieDrop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/gui/BossList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/gui/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/gui/ItemListGUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/gui/MainGUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/gui/PerCraft/EspacialBoots.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/gui/personal/PerCraft/EspacialBoots.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/gui/PerCraft/EspacialChestPlate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/gui/personal/PerCraft/EspacialChestPlate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/gui/PerCraft/EspacialHelmet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/gui/personal/PerCraft/EspacialHelmet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/gui/PerCraft/EspacialLeggings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/gui/personal/PerCraft/EspacialLeggings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/gui/PerCraft/LanzaMeteoros.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/gui/personal/PerCraft/LanzaMeteoros.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/gui/PerCraft/MataDioses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/gui/personal/PerCraft/MataDioses.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/gui/PerCraft/SuperPocion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/gui/personal/PerCraft/SuperPocion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/listeners/InventoryEvents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/listeners/InventoryEvents.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/listeners/PlayerEvents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/listeners/PlayerEvents.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/listeners/entity/EntityDeath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/listeners/entity/EntityDeath.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/listeners/entity/GeneralEvents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/listeners/entity/GeneralEvents.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/utils/BossUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/utils/BossUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/utils/Comparators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/utils/Comparators.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/utils/UpdateHologram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/darkhorizon/es/virtualbosses/utils/UpdateHologram.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +156,20 @@
       <workItem from="1587245298556" duration="1128000" />
       <workItem from="1587246784075" duration="878000" />
       <workItem from="1587294148805" duration="6318000" />
-      <workItem from="1587302411612" duration="5150000" />
+      <workItem from="1587302411612" duration="5922000" />
+      <workItem from="1587316848252" duration="140000" />
+      <workItem from="1587317363442" duration="840000" />
+      <workItem from="1587409681062" duration="164000" />
+      <workItem from="1587492203163" duration="50000" />
+      <workItem from="1587568896042" duration="341000" />
+      <workItem from="1587585568974" duration="69000" />
+      <workItem from="1587648587023" duration="479000" />
+      <workItem from="1587649858275" duration="5000" />
+      <workItem from="1587667242224" duration="925000" />
+      <workItem from="1587668619716" duration="1466000" />
+      <workItem from="1587715416207" duration="161000" />
+      <workItem from="1587715784268" duration="596000" />
+      <workItem from="1587723887980" duration="11152000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1586524733501</created>
@@ -269,7 +283,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587212513294</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Added all items to BlackMarket">
+      <created>1587307602422</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1587307602422</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,7 +310,8 @@
     <MESSAGE value="Added JSON" />
     <MESSAGE value="Started Invocator.java" />
     <MESSAGE value="Added Boss spawn advise" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Boss spawn advise" />
+    <MESSAGE value="Added all items to BlackMarket" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added all items to BlackMarket" />
   </component>
   <component name="WindowStateProjectService">
     <state x="480" y="139" key="#Inspections" timestamp="1587219014296">
@@ -311,19 +333,19 @@
     </state>
     <state x="446" y="119" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586536145613" />
     <state x="446" y="119" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1707.920@0.0.1707.920" timestamp="1586938785189" />
-    <state x="659" y="170" key="#com.intellij.ide.util.MemberChooser" timestamp="1587148740942">
+    <state x="659" y="170" key="#com.intellij.ide.util.MemberChooser" timestamp="1587734050978">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state x="659" y="170" key="#com.intellij.ide.util.MemberChooser/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586881308854" />
+    <state x="659" y="170" key="#com.intellij.ide.util.MemberChooser/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1587734050978" />
     <state x="659" y="170" key="#com.intellij.ide.util.MemberChooser/0.0.1707.920@0.0.1707.920" timestamp="1587148740942" />
     <state x="534" y="197" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1586878087140">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state x="534" y="197" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586878087140" />
-    <state x="437" y="386" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1586523157568">
+    <state x="437" y="386" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1587728294293">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state x="437" y="386" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586523157568" />
+    <state x="437" y="386" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1587728294293" />
     <state x="576" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1586797451423">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
@@ -333,11 +355,11 @@
     </state>
     <state x="584" y="208" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586864239608" />
     <state x="584" y="208" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1707.920@0.0.1707.920" timestamp="1586983030932" />
-    <state x="874" y="58" key="CommitChangelistDialog2" timestamp="1587212511581">
+    <state x="874" y="58" key="CommitChangelistDialog2" timestamp="1587307599293">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state x="478" y="57" key="CommitChangelistDialog2/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586878558595" />
-    <state x="874" y="58" key="CommitChangelistDialog2/0.0.1707.920@0.0.1707.920" timestamp="1587212511581" />
+    <state x="874" y="58" key="CommitChangelistDialog2/0.0.1707.920@0.0.1707.920" timestamp="1587307599293" />
     <state x="634" y="216" key="FileChooserDialogImpl" timestamp="1587063700840">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
@@ -347,11 +369,11 @@
     </state>
     <state x="334" y="35" key="SettingsEditor/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586881959505" />
     <state x="334" y="35" key="SettingsEditor/0.0.1707.920@0.0.1707.920" timestamp="1587035814867" />
-    <state x="446" y="194" key="Vcs.Push.Dialog.v2" timestamp="1587149674765">
+    <state x="446" y="194" key="Vcs.Push.Dialog.v2" timestamp="1587307606985">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state x="446" y="194" key="Vcs.Push.Dialog.v2/0.0.1707.920/-1920.279.1280.680@0.0.1707.920" timestamp="1586878563140" />
-    <state x="446" y="194" key="Vcs.Push.Dialog.v2/0.0.1707.920@0.0.1707.920" timestamp="1587149674765" />
+    <state x="446" y="194" key="Vcs.Push.Dialog.v2/0.0.1707.920@0.0.1707.920" timestamp="1587307606985" />
     <state x="550" y="285" key="com.intellij.ide.util.TipDialog" timestamp="1586870043456">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
