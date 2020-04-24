@@ -1,7 +1,6 @@
 package dev.darkhorizon.es.virtualbosses.gui.global;
 
 import dev.darkhorizon.es.virtualbosses.gui.GUI;
-import dev.darkhorizon.es.virtualbosses.gui.GUIUtils;
 import dev.darkhorizon.es.virtualbosses.gui.PersonalGUI;
 import dev.darkhorizon.es.virtualbosses.gui.personal.PerCraft.*;
 import dev.darkhorizon.es.virtualbosses.items.CommonItems;
@@ -9,7 +8,6 @@ import dev.darkhorizon.es.virtualbosses.items.ItemListItems;
 import dev.darkhorizon.es.virtualbosses.utils.Comparators;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 public class ItemListGUI extends GUI {

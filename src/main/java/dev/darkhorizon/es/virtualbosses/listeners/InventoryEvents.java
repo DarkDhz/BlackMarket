@@ -1,20 +1,14 @@
 package dev.darkhorizon.es.virtualbosses.listeners;
 
-import dev.darkhorizon.es.virtualbosses.gui.GUIUtils;
 import dev.darkhorizon.es.virtualbosses.gui.PersonalGUI;
 import dev.darkhorizon.es.virtualbosses.gui.global.BossList;
 import dev.darkhorizon.es.virtualbosses.gui.global.ItemListGUI;
 import dev.darkhorizon.es.virtualbosses.gui.global.MainGUI;
-import dev.darkhorizon.es.virtualbosses.gui.personal.PerCraft.*;
-import dev.darkhorizon.es.virtualbosses.utils.Comparators;
-import org.bukkit.Sound;
-import org.bukkit.block.Container;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
-import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
